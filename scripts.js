@@ -176,6 +176,54 @@
       }
     };
 
+    // ── Process section: mobile tap + swipe support ──
+    (function() {
+      var stepItems = document.querySelectorAll('.process-step-item');
+      var dots = document.querySelectorAll('.process-photo-dot');
+      var photoContainer = document.getElementById('process-photo-container');
+      if (!stepItems.length) return;
+
+      var currentStep = 0;
+
+      // Tap on step cards
+      stepItems.forEach(function(step, i) {
+        step.addEventListener('click', function() {
+          currentStep = i;
+          window.activateStep(i);
+        });
+      });
+
+      // Tap on dot indicators
+      dots.forEach(function(dot, i) {
+        dot.style.cursor = 'pointer';
+        dot.addEventListener('click', function() {
+          currentStep = i;
+          window.activateStep(i);
+        });
+      });
+
+      // Swipe on the photo container
+      if (photoContainer) {
+        var touchStartX = 0, touchStartY = 0;
+        photoContainer.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+        photoContainer.addEventListener('touchend', function(e) {
+          var diffX = touchStartX - e.changedTouches[0].screenX;
+          var diffY = touchStartY - e.changedTouches[0].screenY;
+          if (Math.abs(diffX) < 50) return;
+          if (Math.abs(diffY) > Math.abs(diffX)) return;
+          if (diffX > 0) {
+            currentStep = Math.min(currentStep + 1, stepItems.length - 1);
+          } else {
+            currentStep = Math.max(currentStep - 1, 0);
+          }
+          window.activateStep(currentStep);
+        }, { passive: true });
+      }
+    })();
+
     // ── Mobile hamburger menu ──
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
