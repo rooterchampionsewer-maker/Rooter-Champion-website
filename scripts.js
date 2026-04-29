@@ -10,7 +10,7 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.01, rootMargin: '0px 0px 100px 0px' });
     document.querySelectorAll('.scroll-reveal, .scroll-fade').forEach(function(el) {
       revealObserver.observe(el);
     });
@@ -24,6 +24,25 @@
         }
       });
     }, 100);
+
+    // Safety net: reveal anything stuck in hidden state on scroll past it
+    var revealOnScroll = function() {
+      document.querySelectorAll('.scroll-reveal:not(.revealed), .scroll-fade:not(.revealed)').forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 100 && rect.bottom > 0) {
+          el.classList.add('revealed');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
+
+    // Final safety net: after 2.5s, force-reveal anything still hidden
+    setTimeout(function() {
+      document.querySelectorAll('.scroll-reveal:not(.revealed), .scroll-fade:not(.revealed)').forEach(function(el) {
+        el.classList.add('revealed');
+      });
+      window.removeEventListener('scroll', revealOnScroll);
+    }, 2500);
 
     // Nav: floating glass card — hide on scroll down, show on scroll up
     const nav = document.getElementById('main-nav');
