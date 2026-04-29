@@ -254,8 +254,8 @@
       <div class="relative w-36 h-36">
         <!-- Pulsing soft glow halo -->
         <div class="absolute inset-2 rounded-full hero-badge-glow pointer-events-none"></div>
-        <!-- Rotating text ring — radius 30, sits behind the badge image (z-10 above) -->
-        <div class="absolute inset-0 hero-badge-rotate pointer-events-none">
+        <!-- Rotating text ring — radius 30, sits behind the badge image (z-10 above). Shifted up 3px to visually center with the badge. -->
+        <div class="absolute hero-badge-rotate pointer-events-none" style="top:-3px;right:0;bottom:3px;left:0">
           <svg viewBox="0 0 100 100" class="w-full h-full">
             <defs>
               <path id="badge-circle-path" d="M 50, 50 m -30, 0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" />
