@@ -1,5 +1,25 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; }
+    /* $55 hero badge — pulsing glow + rotating text */
+    @keyframes heroBadgePulse {
+      0%, 100% {
+        box-shadow: 0 0 16px 2px rgba(129,183,82,0.35), 0 0 32px 4px rgba(83,166,220,0.2);
+      }
+      50% {
+        box-shadow: 0 0 28px 6px rgba(129,183,82,0.55), 0 0 56px 10px rgba(83,166,220,0.35);
+      }
+    }
+    .hero-badge-glow {
+      animation: heroBadgePulse 3s ease-in-out infinite;
+    }
+    @keyframes heroBadgeRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .hero-badge-rotate {
+      animation: heroBadgeRotate 18s linear infinite;
+      transform-origin: center;
+    }
     .font-heading { font-family: 'Barlow Condensed', sans-serif; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #010000; }
