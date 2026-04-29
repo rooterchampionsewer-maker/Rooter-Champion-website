@@ -254,14 +254,14 @@
       <div class="relative w-36 h-36">
         <!-- Pulsing soft glow halo -->
         <div class="absolute inset-2 rounded-full hero-badge-glow pointer-events-none"></div>
-        <!-- Rotating text ring (rotates on a wrapper div for reliable cross-browser support) -->
+        <!-- Rotating text ring — radius 30, sits behind the badge image (z-10 above) -->
         <div class="absolute inset-0 hero-badge-rotate pointer-events-none">
           <svg viewBox="0 0 100 100" class="w-full h-full">
             <defs>
-              <path id="badge-circle-path" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" />
+              <path id="badge-circle-path" d="M 50, 50 m -30, 0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" />
             </defs>
-            <text style="font-family:'Barlow Condensed',sans-serif;font-size:7px;font-weight:700;fill:#81B752;letter-spacing:0.18em;text-transform:uppercase">
-              <textPath href="#badge-circle-path" startOffset="0%">$55 Drain Cleaning &middot; Camera Inspection &middot; $55 Drain Cleaning &middot; Camera Inspection &middot;&nbsp;</textPath>
+            <text style="font-family:'Barlow Condensed',sans-serif;font-size:6px;font-weight:700;fill:#81B752;text-transform:uppercase">
+              <textPath href="#badge-circle-path" startOffset="0%" textLength="188" lengthAdjust="spacing">$55 Drain Cleaning &middot; Camera Inspection &middot;</textPath>
             </text>
           </svg>
         </div>

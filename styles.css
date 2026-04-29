@@ -15,7 +15,7 @@
       to   { transform: rotate(360deg); }
     }
     .hero-badge-rotate {
-      animation: heroBadgeRotate 12s linear infinite;
+      animation: heroBadgeRotate 22s linear infinite;
     }
     .font-heading { font-family: 'Barlow Condensed', sans-serif; }
     ::-webkit-scrollbar { width: 6px; }
