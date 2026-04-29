@@ -251,20 +251,22 @@
 
     <!-- $55 Drain Cleaning Special — bottom-right hero badge with rotating text + glow -->
     <a href="drain-cleaning.html" class="hidden lg:block absolute bottom-8 right-8 z-20 group" aria-label="$55 Drain Cleaning Special with Camera Inspection">
-      <div class="relative w-36 h-36 flex items-center justify-center">
+      <div class="relative w-36 h-36">
         <!-- Pulsing soft glow halo -->
-        <div class="absolute inset-2 rounded-full hero-badge-glow"></div>
+        <div class="absolute inset-2 rounded-full hero-badge-glow pointer-events-none"></div>
+        <!-- Rotating text ring (rotates on a wrapper div for reliable cross-browser support) -->
+        <div class="absolute inset-0 hero-badge-rotate pointer-events-none">
+          <svg viewBox="0 0 100 100" class="w-full h-full">
+            <defs>
+              <path id="badge-circle-path" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" />
+            </defs>
+            <text style="font-family:'Barlow Condensed',sans-serif;font-size:7px;font-weight:700;fill:#81B752;letter-spacing:0.18em;text-transform:uppercase">
+              <textPath href="#badge-circle-path" startOffset="0%">$55 Drain Cleaning &middot; Camera Inspection &middot; $55 Drain Cleaning &middot; Camera Inspection &middot;&nbsp;</textPath>
+            </text>
+          </svg>
+        </div>
         <!-- Centerpiece: $55 badge image -->
-        <img src="brand_assets/$55%20badge%20logo%20clean.png" alt="$55 Drain Cleaning Special" class="relative z-10 w-20 h-20 transition-transform duration-300 group-hover:scale-110">
-        <!-- Rotating text ring -->
-        <svg class="absolute inset-0 w-full h-full hero-badge-rotate" viewBox="0 0 100 100">
-          <defs>
-            <path id="badge-circle-path" d="M 50, 50 m -42, 0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0" />
-          </defs>
-          <text style="font-family:'Barlow Condensed',sans-serif;font-size:7px;font-weight:700;fill:#81B752;letter-spacing:0.18em;text-transform:uppercase">
-            <textPath href="#badge-circle-path" startOffset="0%">$55 Drain Cleaning &middot; Camera Inspection &middot; $55 Drain Cleaning &middot; Camera Inspection &middot;&nbsp;</textPath>
-          </text>
-        </svg>
+        <img src="brand_assets/$55%20badge%20logo%20clean.png" alt="$55 Drain Cleaning Special" class="absolute inset-0 m-auto w-20 h-20 z-10 transition-transform duration-300 group-hover:scale-110">
       </div>
     </a>
 

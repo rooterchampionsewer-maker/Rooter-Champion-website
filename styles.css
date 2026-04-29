@@ -2,23 +2,20 @@
     body { font-family: 'DM Sans', sans-serif; }
     /* $55 hero badge — pulsing glow + rotating text */
     @keyframes heroBadgePulse {
-      0%, 100% {
-        box-shadow: 0 0 16px 2px rgba(129,183,82,0.35), 0 0 32px 4px rgba(83,166,220,0.2);
-      }
-      50% {
-        box-shadow: 0 0 28px 6px rgba(129,183,82,0.55), 0 0 56px 10px rgba(83,166,220,0.35);
-      }
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50%      { opacity: 1;    transform: scale(1.1); }
     }
     .hero-badge-glow {
-      animation: heroBadgePulse 3s ease-in-out infinite;
+      animation: heroBadgePulse 2.6s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(129,183,82,0.55) 0%, rgba(83,166,220,0.3) 45%, transparent 72%);
+      filter: blur(6px);
     }
     @keyframes heroBadgeRotate {
       from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      to   { transform: rotate(360deg); }
     }
     .hero-badge-rotate {
-      animation: heroBadgeRotate 18s linear infinite;
-      transform-origin: center;
+      animation: heroBadgeRotate 12s linear infinite;
     }
     .font-heading { font-family: 'Barlow Condensed', sans-serif; }
     ::-webkit-scrollbar { width: 6px; }
