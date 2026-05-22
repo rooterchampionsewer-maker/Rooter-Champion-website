@@ -46,12 +46,16 @@
     }
   </script>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Override the nav's drop shadow on this page — it creates a visible fade below the nav over the solid hero bg */
-    nav#main-nav { box-shadow: none !important; }
-  </style>
 </head>
-<body class="bg-[#0A1220] text-white overflow-x-hidden relative min-h-screen">
+<body class="bg-[#0A1628] text-white overflow-x-hidden relative min-h-screen">
+
+  <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0F1E36] to-[#274A6A] opacity-100"></div>
+    <div class="absolute bottom-0 right-0 w-3/4 h-3/4 bg-[#274A6A] origin-bottom-right rotate-12 translate-y-1/3 -translate-x-1/4 opacity-70"></div>
+    <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#1A3550] opacity-80"></div>
+    <div class="absolute top-0 left-0 w-1/2 h-full bg-[#53A6DC] -skew-y-6 origin-top-left -translate-y-1/4 opacity-[0.08]"></div>
+    <div class="absolute top-1/3 right-0 w-1/3 h-1/2 bg-[#53A6DC] skew-y-12 opacity-[0.06]"></div>
+  </div>
 
   <!-- NAV -->
   <nav id="main-nav" class="fixed top-0 left-0 right-0 lg:top-4 lg:left-4 lg:right-4 z-50 rounded-none lg:rounded-xl backdrop-blur-md" style="background:rgba(39,74,106,0.55);border:1px solid rgba(83,166,220,0.2);transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease,transform 1.5s cubic-bezier(0.25,0.1,0.25,1),opacity 1.5s ease;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
@@ -116,7 +120,7 @@
   </nav>
 
   <!-- MAIN CONTENT -->
-  <div class="relative z-10 mt-16 lg:mt-28">
+  <div class="relative z-10 mx-0 mt-16 mb-0 rounded-none lg:mx-4 lg:mt-28 lg:mb-12 lg:rounded-xl shadow-none lg:shadow-[0_25px_80px_rgba(0,0,0,0.5)] overflow-hidden">
 
   <!-- HERO — clean solid bg + grid, no photo, no gradient overlays -->
   <section class="bg-[#0A1220] site-grid-dark relative overflow-hidden pt-20 lg:pt-28 pb-16 lg:pb-24">
