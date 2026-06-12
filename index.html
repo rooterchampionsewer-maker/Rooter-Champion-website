@@ -59,15 +59,22 @@
   </div>
 
   <!-- NAV -->
-  <nav id="main-nav" class="fixed top-0 left-0 right-0 lg:top-4 lg:left-4 lg:right-4 z-50 rounded-none lg:rounded-xl backdrop-blur-md" style="background:rgba(39,74,106,0.55);border:1px solid rgba(83,166,220,0.2);transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease,transform 1.5s cubic-bezier(0.25,0.1,0.25,1),opacity 1.5s ease;box-shadow:0 8px 32px rgba(0,0,0,0.3)">
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50" style="background:linear-gradient(to bottom, rgba(10,18,32,0.7) 0%, rgba(10,18,32,0.25) 55%, rgba(10,18,32,0) 100%);border-bottom:1px solid transparent;transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease,backdrop-filter 0.3s ease,transform 1.5s cubic-bezier(0.25,0.1,0.25,1),opacity 1.5s ease">
     <div class="px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-12 md:h-20 pt-1 md:pt-0">
-        <a href="#" class="flex items-center"><img src="brand_assets/MainLogo.png" alt="Rooter Champion" class="h-8 sm:h-10 md:h-12 w-auto mt-2 md:mt-0"></a>
-        <div class="hidden lg:flex items-center gap-7">
-          <a href="#" class="nav-link font-heading font-semibold text-xs tracking-widest uppercase text-[#EFF0F1]/70">Home</a>
-          <a href="about.html" class="nav-link font-heading font-semibold text-xs tracking-widest uppercase text-[#EFF0F1]/70">About Us</a>
-          <div class="nav-dropdown">
-            <a href="#" class="nav-link font-heading font-semibold text-xs tracking-widest uppercase text-[#EFF0F1]/70 flex items-center gap-1">
+      <div class="relative flex items-center justify-between pt-1 md:pt-0" style="height:clamp(58px,6.4vw,96px)">
+        <a href="#" class="group flex items-center"><img src="brand_assets/MainLogo.png" alt="Rooter Champion" class="w-auto mt-1 md:mt-0 transition-transform duration-300 ease-out group-hover:scale-105" style="height:clamp(42px,5.2vw,76px)"></a>
+        <ul id="nav-menu" class="hidden lg:flex relative items-center p-1 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+          <!-- Sliding green pill (follows hovered item) -->
+          <li id="nav-pill" aria-hidden="true"></li>
+
+          <li class="nav-tab relative z-10">
+            <a href="#" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">Home</a>
+          </li>
+          <li class="nav-tab relative z-10">
+            <a href="about.html" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">About Us</a>
+          </li>
+          <li class="nav-tab nav-dropdown relative z-10">
+            <a href="#" class="flex items-center gap-1 px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">
               Services
               <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </a>
@@ -79,10 +86,14 @@
               <a href="sewer-robotics.html">Sewer Robotics</a>
               <a href="drain-installation.html">Drain Installation</a>
             </div>
-          </div>
-          <a href="service-areas.html" class="nav-link font-heading font-semibold text-xs tracking-widest uppercase text-[#EFF0F1]/70">Service Areas</a>
-          <a href="contact.html" class="nav-link font-heading font-semibold text-xs tracking-widest uppercase text-[#EFF0F1]/70">Contact Us</a>
-        </div>
+          </li>
+          <li class="nav-tab relative z-10">
+            <a href="service-areas.html" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">Service Areas</a>
+          </li>
+          <li class="nav-tab relative z-10">
+            <a href="contact.html" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">Contact Us</a>
+          </li>
+        </ul>
           <div class="flex items-center lg:hidden">
             <button id="mobile-menu-btn" class="flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Menu" aria-expanded="false">
               <span class="w-6 h-0.5 bg-[#81B752] rounded-full"></span>
@@ -90,13 +101,12 @@
               <span class="w-6 h-0.5 bg-[#81B752] rounded-full"></span>
             </button>
           </div>
-        <div class="hidden lg:flex items-center gap-3">
-          <a href="tel:7143059263" class="flex items-center gap-2 text-[#53A6DC] font-heading font-semibold text-sm tracking-wide hover:text-[#B2D1E6] transition-colors duration-200">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+        <!-- Phone — glass pill matching the menu capsule -->
+        <div class="hidden lg:flex items-center">
+          <a href="tel:7143059263" aria-label="Call 714-305-9263" class="nav-phone group inline-flex items-center gap-2.5 px-5 py-2 leading-none font-heading font-bold tracking-wide text-white whitespace-nowrap transition-[transform,background,border-color] duration-300 ease-out hover:scale-105">
+            <svg class="w-5 h-5 flex-shrink-0 text-[#81B752] group-hover:text-white transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
             714-305-9263
           </a>
-          <a href="tel:7143059263" class="bg-[#81B752] hover:bg-[#81B752]/80 active:scale-95 text-white font-heading font-bold text-xs tracking-widest uppercase px-4 py-2.5 rounded transition-all duration-200 shadow-[0_4px_14px_rgba(129,183,82,0.3)]">Call Now</a>
-          <a href="#price-match" class="bg-[#53A6DC] hover:bg-[#53A6DC]/80 active:scale-95 text-white font-heading font-bold text-xs tracking-widest uppercase px-4 py-2.5 rounded transition-all duration-200 shadow-[0_4px_14px_rgba(83,166,220,0.3)]">Get Quote</a>
         </div>
       </div>
       <!-- Mobile menu -->
@@ -121,107 +131,64 @@
   </nav>
 
   <!-- MAIN CONTENT CONTAINER — edge-to-edge on mobile, rounded on desktop -->
-  <div class="relative z-10 mx-0 mt-16 mb-0 rounded-none lg:mx-4 lg:mt-28 lg:mb-12 lg:rounded-xl shadow-none lg:shadow-[0_25px_80px_rgba(0,0,0,0.5)] overflow-hidden">
+  <div class="relative z-10 mx-0 mt-0 mb-0 rounded-none overflow-hidden">
 
   <!-- HERO -->
-  <section id="hero" class="relative flex items-start lg:items-center overflow-hidden min-h-[85vh] lg:min-h-0" style="background:#274A6A">
+  <section id="hero" class="relative flex items-start lg:items-center overflow-hidden min-h-[90vh] lg:min-h-[94vh]" style="background:#0A1220">
 
-    <!-- Background: studio van photo + overlay + grid -->
+    <!-- Background: desktop = dan-cutter full-bleed; mobile = solid bg + branded van photo at bottom -->
     <div class="absolute inset-0 z-0">
-      <!-- Van studio photo -->
-      <!-- Desktop van photo (original) -->
-      <img src="brand_assets/Road.jpg" alt="" aria-hidden="true" class="hidden lg:block absolute inset-0 w-full h-full object-cover object-center" style="opacity:0.85">
-      <!-- Mobile: solid bg color + photo at bottom half, uncropped, with fade -->
+      <!-- Desktop photo -->
+      <img src="brand_assets/dancuttermainhero.jpg" alt="" aria-hidden="true" class="hidden lg:block absolute inset-0 w-full h-full object-cover" style="opacity:0.9;object-position:center 72%">
+      <!-- Mobile: solid bg + van photo at the bottom, faded in -->
       <div class="lg:hidden absolute inset-0" style="background:#0A1628"></div>
       <div class="lg:hidden absolute inset-x-0 bottom-0" style="height:65%">
-        <img src="brand_assets/Road.jpg" alt="" aria-hidden="true" class="w-full h-full object-cover" style="object-position:center 70%;mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 15%, #000 40%);-webkit-mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 15%, #000 40%)">
+        <img src="brand_assets/dancuttermainhero.jpg" alt="" aria-hidden="true" class="w-full h-full object-cover" style="object-position:center 70%;mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 12%, #000 35%);-webkit-mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 12%, #000 35%)">
       </div>
-      <!-- Dark overlay for text readability -->
-      <div class="absolute inset-0 hidden lg:block" style="background:linear-gradient(to right, rgba(10,18,32,0.95) 0%, rgba(10,18,32,0.85) 25%, rgba(39,74,106,0.5) 50%, rgba(39,74,106,0.15) 75%, transparent 100%)"></div>
-      <div class="absolute inset-0 lg:hidden" style="background:linear-gradient(to bottom, rgba(10,22,40,0.7) 0%, rgba(10,22,40,0.1) 30%, rgba(10,22,40,0.05) 60%, rgba(10,22,40,0.55) 100%)"></div>
-
-      <!-- Grid pattern overlay -->
-      <div class="absolute inset-0 hero-grid" style="opacity:0.35"></div>
-
-      <!-- Animated beam SVG (matches GridBeam component) -->
-      <svg class="absolute pointer-events-none" style="top:15%;left:35%;width:380px;height:160px;opacity:0.5" viewBox="0 0 156 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M31 .5h32M0 .5h32m30 31h32m-1 0h32m-1 31h32M62.5 32V0m62 63V31" stroke="url(#beam1)" stroke-width="1.5"/>
-        <defs>
-          <linearGradient id="beam1" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0" stop-color="#53A6DC" stop-opacity="0"/>
-            <stop offset="0.3" stop-color="#53A6DC"/>
-            <stop offset="0.6" stop-color="#81B752"/>
-            <stop offset="1" stop-color="#81B752" stop-opacity="0"/>
-            <animate attributeName="y1" values="160%;-20%;160%" dur="3.6s" repeatCount="indefinite"/>
-            <animate attributeName="y2" values="180%;0%;180%" dur="3.6s" repeatCount="indefinite"/>
-            <animate attributeName="x1" values="50%;0%;50%" dur="3.6s" repeatCount="indefinite"/>
-            <animate attributeName="x2" values="60%;10%;60%" dur="3.6s" repeatCount="indefinite"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg class="absolute pointer-events-none" style="top:45%;left:55%;width:320px;height:130px;opacity:0.35" viewBox="0 0 156 63" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M31 .5h32M0 .5h32m30 31h32m-1 0h32m-1 31h32M62.5 32V0m62 63V31" stroke="url(#beam2)" stroke-width="1.5"/>
-        <defs>
-          <linearGradient id="beam2" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0" stop-color="#B2D1E6" stop-opacity="0"/>
-            <stop offset="0.3" stop-color="#53A6DC"/>
-            <stop offset="0.65" stop-color="#81B752"/>
-            <stop offset="1" stop-color="#B2D1E6" stop-opacity="0"/>
-            <animate attributeName="y1" values="180%;-40%;180%" dur="4.5s" begin="1.2s" repeatCount="indefinite"/>
-            <animate attributeName="y2" values="200%;-20%;200%" dur="4.5s" begin="1.2s" repeatCount="indefinite"/>
-            <animate attributeName="x1" values="60%;0%;60%" dur="4.5s" begin="1.2s" repeatCount="indefinite"/>
-            <animate attributeName="x2" values="70%;10%;70%" dur="4.5s" begin="1.2s" repeatCount="indefinite"/>
-          </linearGradient>
-        </defs>
-      </svg>
-
+      <!-- Desktop: dark gradient for text legibility -->
+      <div class="absolute inset-0 hidden lg:block" style="background:linear-gradient(to right, rgba(10,18,32,0.95) 0%, rgba(10,18,32,0.82) 30%, rgba(39,74,106,0.45) 60%, transparent 100%)"></div>
+      <!-- Subtle grid texture -->
+      <div class="absolute inset-0 hero-grid pointer-events-none" style="opacity:0.18"></div>
     </div>
 
-    <!-- Content — left-aligned, matches AnimatedHero items-start text-left -->
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-10 pb-10 lg:pt-20 lg:pb-24 text-center lg:text-left">
+    <!-- Text content over the photo -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-28 pb-16 lg:py-24 text-center lg:text-left">
+      <div class="w-full max-w-4xl mx-auto lg:mx-0">
 
-      <!-- Title · delay 0.35s — matches motion.h1 -->
-      <div class="anim-fade-up" style="animation-delay:0.35s">
-        <h1 class="font-heading font-black text-white mb-4 lg:mb-6" style="font-size:clamp(4.1rem,9vw,7.2rem);letter-spacing:-0.02em;line-height:1.05">
-          SEWER &amp; DRAIN<br>
-          <span class="text-[#53A6DC]">CHAMPIONS</span>
-        </h1>
+        <!-- Headline -->
+        <div class="anim-fade-up" style="animation-delay:0.40s">
+          <h1 class="font-heading font-black text-white mb-6 lg:mb-8 leading-[1.02] lg:leading-[0.82] lg:[transform:scaleY(1.32)] lg:[transform-origin:left_bottom]" style="font-size:clamp(3.6rem,8vw,7.2rem);letter-spacing:-0.02em">
+            SEWER &amp; DRAIN<br>
+            <span class="text-[#53A6DC]">CHAMPIONS</span>
+          </h1>
+        </div>
+
+        <!-- Mobile tagline (matches the original mobile hero) -->
+        <p class="lg:hidden slow-pulse font-body text-[#81B752] text-sm text-center mt-2 mb-8">Based in La Habra &middot; Serving Los Angeles &amp; Orange County</p>
+
+        <!-- Description (desktop only) -->
+        <div class="anim-fade-up hidden lg:block" style="animation-delay:0.50s">
+          <p class="font-body text-[#EFF0F1]/80 text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 mb-9" style="line-height:1.75">
+            Fast, reliable sewer and drain services across LA &amp; Orange County. No mess, no stress — we get it right the first time.
+          </p>
+        </div>
+
+        <!-- Buttons (desktop only — sticky bottom bar handles mobile CTAs) -->
+        <div class="anim-fade-up hidden lg:flex flex-wrap gap-4 justify-center lg:justify-start" style="animation-delay:0.60s">
+          <a href="tel:7143059263" class="glass-btn">
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            Call 714-305-9263
+          </a>
+          <a href="contact.html" class="glass-btn">
+            Get Free Quote
+          </a>
+        </div>
+
       </div>
-
-      <!-- Mobile tagline below title -->
-      <p class="lg:hidden slow-pulse font-body text-[#81B752] text-sm text-center mt-6 mb-8">Based in La Habra &middot; Serving Los Angeles &amp; Orange County</p>
-
-      <!-- Description · delay 0.50s — hidden on mobile -->
-      <div class="anim-fade-up hidden lg:block" style="animation-delay:0.50s">
-        <p class="font-body text-[#EFF0F1]/75 text-xl max-w-xl mb-10" style="line-height:1.75">
-          Fast, reliable sewer and drain services across LA & Orange County. No mess, no stress — we get it right the first time.
-        </p>
-      </div>
-
-      <!-- Buttons · delay 0.65s — hidden on mobile (sticky bar handles this) -->
-      <div class="anim-fade-up hidden lg:flex flex-wrap gap-4 mb-10" style="animation-delay:0.65s">
-        <a href="tel:7143059263" class="glass-btn">
-          <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
-          Call 714-305-9263
-        </a>
-        <a href="contact.html" class="glass-btn">
-          Get Free Quote
-        </a>
-      </div>
-
-      <!-- Service pills · delay 0.80s — hidden on mobile -->
-      <div class="anim-fade-up hidden lg:flex flex-wrap gap-2" style="animation-delay:0.80s">
-        <a href="drain-cleaning.html" class="font-body text-xs text-[#53A6DC] hover:text-[#81B752] border border-[#53A6DC]/40 hover:border-[#81B752]/40 rounded-full px-3 py-1 transition-all duration-200">Drain Cleaning</a>
-        <a href="drain-cleaning.html" class="font-body text-xs text-[#53A6DC] hover:text-[#81B752] border border-[#53A6DC]/40 hover:border-[#81B752]/40 rounded-full px-3 py-1 transition-all duration-200">Hydro Jetter</a>
-        <a href="drain-cleaning.html" class="font-body text-xs text-[#53A6DC] hover:text-[#81B752] border border-[#53A6DC]/40 hover:border-[#81B752]/40 rounded-full px-3 py-1 transition-all duration-200">Descale</a>
-        <a href="trenchless.html" class="font-body text-xs text-[#53A6DC] hover:text-[#81B752] border border-[#53A6DC]/40 hover:border-[#81B752]/40 rounded-full px-3 py-1 transition-all duration-200">Trenchless Liners</a>
-        <a href="trenchless.html" class="font-body text-xs text-[#53A6DC] hover:text-[#81B752] border border-[#53A6DC]/40 hover:border-[#81B752]/40 rounded-full px-3 py-1 transition-all duration-200">Pipe Bursting</a>
-      </div>
-
     </div>
 
-    <!-- Mobile trust strip — positioned at bottom of hero -->
-    <div class="absolute bottom-0 left-0 right-0 z-10 lg:hidden pb-16 px-5">
+    <!-- Mobile trust strip — bottom of hero -->
+    <div class="absolute bottom-0 left-0 right-0 z-10 lg:hidden pb-24 px-5">
       <div class="flex flex-col items-center gap-2">
         <div class="flex items-center justify-center gap-5">
           <div class="flex items-center gap-2">
@@ -240,27 +207,6 @@
         </div>
       </div>
     </div>
-
-    <!-- $55 Drain Cleaning Special — bottom-right hero badge with rotating text + glow -->
-    <a href="drain-cleaning.html" class="hidden lg:block absolute bottom-8 right-8 z-20 group" aria-label="$55 Drain Cleaning Special with Camera Inspection">
-      <div class="relative w-36 h-36">
-        <!-- Pulsing soft glow halo -->
-        <div class="absolute inset-2 rounded-full hero-badge-glow pointer-events-none"></div>
-        <!-- Rotating text ring — radius 30, sits behind the badge image (z-10 above). Shifted up 3px to visually center with the badge. -->
-        <div class="absolute hero-badge-rotate pointer-events-none" style="top:-3px;right:0;bottom:3px;left:0">
-          <svg viewBox="0 0 100 100" class="w-full h-full">
-            <defs>
-              <path id="badge-circle-path" d="M 50, 50 m -30, 0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" />
-            </defs>
-            <text style="font-family:'Barlow Condensed',sans-serif;font-size:6px;font-weight:700;fill:#81B752;text-transform:uppercase">
-              <textPath href="#badge-circle-path" startOffset="0%" textLength="188" lengthAdjust="spacing">$55 Drain Cleaning &middot; Camera Inspection &middot;</textPath>
-            </text>
-          </svg>
-        </div>
-        <!-- Centerpiece: $55 badge image -->
-        <img src="brand_assets/$55%20badge%20logo%20clean.png" alt="$55 Drain Cleaning Special" class="absolute inset-0 m-auto w-20 h-20 z-10 transition-transform duration-300 group-hover:scale-110">
-      </div>
-    </a>
 
   </section>
 
@@ -1019,14 +965,14 @@
   </div><!-- END MAIN CONTENT CONTAINER -->
 
   <!-- QUICK QUOTE SIDE TAB -->
-  <div class="fixed z-50 hidden lg:flex" style="top:50%;right:0;transform:translateY(-50%)">
+  <div class="fixed z-50 hidden lg:flex items-center" style="top:50%;right:0;transform:translateY(-50%)">
 
     <!-- Vertical tab — always visible, acts as toggle -->
     <button
       onclick="toggleQuote()"
       id="quote-tab-btn"
       class="flex items-center justify-center text-white font-heading font-bold tracking-widest uppercase rounded-l-xl shadow-[-4px_4px_20px_rgba(0,0,0,0.35)] transition-colors duration-200 focus-visible:outline-none"
-      style="writing-mode:vertical-lr;font-size:0.7rem;letter-spacing:0.18em;padding:1.5rem 0.75rem;background:#53A6DC;min-height:130px"
+      style="writing-mode:vertical-lr;font-size:1.15rem;letter-spacing:0.1em;padding:1rem 0.5rem;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.18);border-right:none;height:334px"
       aria-label="Toggle Quick Quote form"
     >
       QUICK QUOTE
@@ -1038,28 +984,53 @@
       class="overflow-hidden"
       style="max-width:0;transition:max-width 0.35s cubic-bezier(0.16,1,0.3,1)"
     >
-      <div style="width:272px;background:rgba(1,0,0,0.97);border:1px solid rgba(83,166,220,0.3);border-left:none">
-        <div class="px-5 py-3.5 bg-[#274A6A]">
-          <div class="font-heading font-bold text-white text-sm tracking-wide">Quick Quote</div>
-          <div class="font-body text-[#B2D1E6] text-xs">We reply within 1 hour</div>
+      <div class="rounded-l-2xl overflow-hidden" style="width:340px;background:rgba(4,8,16,0.98);border:1px solid rgba(83,166,220,0.35);border-left:none;box-shadow:0 24px 60px rgba(0,0,0,0.55)">
+        <!-- Top: $55 special — gradient header with glowing badge -->
+        <div class="relative flex flex-col items-center text-center px-5 pt-6 pb-5 overflow-hidden" style="background:linear-gradient(160deg,#2d5577 0%,#16293c 100%)">
+          <div class="absolute inset-0 hero-grid pointer-events-none" style="opacity:0.18"></div>
+          <div class="relative z-10">
+            <div class="absolute inset-0 rounded-full blur-2xl" style="background:rgba(83,166,220,0.45);transform:scale(0.8)"></div>
+            <img src="brand_assets/thefiftyfivelogo-hero.png" alt="$55 Drain Cleaning with Camera Inspection" class="relative w-32 h-32" style="filter:drop-shadow(0 8px 18px rgba(0,0,0,0.5))">
+          </div>
+          <div class="relative z-10 font-heading font-black text-white text-2xl tracking-wide mt-2 leading-none"><span class="text-[#81B752]">$55</span> DRAIN CLEANING</div>
+          <div class="relative z-10 font-body text-[#B2D1E6] text-xs mt-1">Includes a free camera inspection</div>
         </div>
-        <form action="https://formspree.io/f/mkokzbgb" method="POST" class="p-4 space-y-2.5">
-          <input type="hidden" name="_subject" value="New Quick Quote — Rooter Champion">
-          <input type="hidden" name="_source" value="Quick Quote Sidebar">
-          <input type="text" name="name" required placeholder="Your Name" class="w-full text-white text-sm font-body rounded-lg px-3 py-2.5 focus:outline-none transition-colors duration-200" style="background:rgba(39,74,106,0.3);border:1px solid rgba(83,166,220,0.2)">
-          <input type="tel" name="phone" required placeholder="Phone Number" class="w-full text-white text-sm font-body rounded-lg px-3 py-2.5 focus:outline-none transition-colors duration-200" style="background:rgba(39,74,106,0.3);border:1px solid rgba(83,166,220,0.2)">
-          <select name="service" class="w-full text-white text-sm font-body rounded-lg px-3 py-2.5 focus:outline-none transition-colors duration-200" style="background:#010000;border:1px solid rgba(83,166,220,0.2);color:white">
-            <option>Select service...</option>
-            <option>Drain Cleaning</option>
-            <option>Hydro Jetter</option>
-            <option>Descale</option>
-            <option>Trenchless Liners</option>
-            <option>Pipe Bursting</option>
-            <option>General Plumbing</option>
-          </select>
-          <button type="submit" class="w-full bg-[#53A6DC] hover:bg-[#53A6DC]/80 active:scale-95 text-white font-heading font-bold text-sm tracking-widest uppercase py-3 rounded-lg transition-all duration-200">Get My Quote</button>
-          <p class="text-center font-body text-xs" style="color:rgba(239,240,241,0.25)">or call <a href="tel:7143059263" class="text-[#53A6DC] hover:underline">714-305-9263</a></p>
-        </form>
+        <!-- Accent divider -->
+        <div style="height:3px;background:linear-gradient(90deg, rgba(129,183,82,0.95) 0%, rgba(83,166,220,0.95) 100%)"></div>
+        <!-- Bottom: form -->
+        <div class="px-5 pt-5 pb-5">
+          <div class="font-heading font-bold text-white text-base tracking-wide text-center">Get Your Free Quote</div>
+          <div class="flex items-center justify-center gap-1.5 font-body text-[#81B752] text-xs mt-0.5 mb-4">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 7.5V12l3 1.5"/></svg>
+            We reply within 1 hour
+          </div>
+          <form action="https://formspree.io/f/mkokzbgb" method="POST" class="space-y-3">
+            <input type="hidden" name="_subject" value="New Quick Quote — Rooter Champion">
+            <input type="hidden" name="_source" value="Quick Quote Sidebar">
+            <div class="relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#53A6DC] pointer-events-none" fill="currentColor" viewBox="0 0 20 20"><path d="M10 10a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H3z"/></svg>
+              <input type="text" name="name" required placeholder="Your Name" class="w-full text-white text-sm font-body rounded-lg pl-9 pr-3 py-3 focus:outline-none focus:border-[#53A6DC] transition-colors duration-200" style="background:rgba(39,74,106,0.3);border:1px solid rgba(83,166,220,0.2)">
+            </div>
+            <div class="relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#53A6DC] pointer-events-none" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+              <input type="tel" name="phone" required placeholder="Phone Number" class="w-full text-white text-sm font-body rounded-lg pl-9 pr-3 py-3 focus:outline-none focus:border-[#53A6DC] transition-colors duration-200" style="background:rgba(39,74,106,0.3);border:1px solid rgba(83,166,220,0.2)">
+            </div>
+            <select name="service" class="w-full text-white text-sm font-body rounded-lg px-3 py-3 focus:outline-none transition-colors duration-200" style="background:#070d18;border:1px solid rgba(83,166,220,0.2);color:white">
+              <option>Select service...</option>
+              <option>Drain Cleaning</option>
+              <option>Hydro Jetter</option>
+              <option>Descale</option>
+              <option>Trenchless Liners</option>
+              <option>Pipe Bursting</option>
+              <option>General Plumbing</option>
+            </select>
+            <button type="submit" class="group w-full inline-flex items-center justify-center gap-2 bg-[#81B752] hover:bg-[#72a247] active:scale-95 text-white font-heading font-bold text-sm tracking-widest uppercase py-3.5 rounded-lg transition-all duration-200 shadow-[0_6px_20px_rgba(129,183,82,0.4)]">
+              Get My Quote
+              <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="text-center font-body text-xs pt-1" style="color:rgba(239,240,241,0.5)">or call us at<br><a href="tel:7143059263" class="text-[#53A6DC] font-heading font-bold text-lg tracking-wide hover:text-[#81B752] hover:underline transition-colors duration-200">714-305-9263</a></p>
+          </form>
+        </div>
       </div>
     </div>
 

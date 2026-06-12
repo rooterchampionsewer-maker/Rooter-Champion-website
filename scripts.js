@@ -52,13 +52,19 @@
       var currentScrollY = window.scrollY;
 
       if (currentScrollY > 60) {
-        nav.style.background = 'rgba(39,74,106,0.75)';
-        nav.style.borderColor = 'rgba(83,166,220,0.3)';
-        nav.style.boxShadow = '0 8px 40px rgba(0,0,0,0.4)';
+        // Scrolled over content — solid glass bar (separation via background + shadow, no line)
+        nav.style.background = 'rgba(39,74,106,0.95)';
+        nav.style.borderColor = 'transparent';
+        nav.style.boxShadow = '0 10px 40px rgba(0,0,0,0.45)';
+        nav.style.backdropFilter = 'blur(12px)';
+        nav.style.webkitBackdropFilter = 'blur(12px)';
       } else {
-        nav.style.background = 'rgba(39,74,106,0.55)';
-        nav.style.borderColor = 'rgba(83,166,220,0.2)';
-        nav.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3)';
+        // At top, over the hero photo — transparent, soft gradient fade only (no line)
+        nav.style.background = 'linear-gradient(to bottom, rgba(10,18,32,0.7) 0%, rgba(10,18,32,0.25) 55%, rgba(10,18,32,0) 100%)';
+        nav.style.borderColor = 'transparent';
+        nav.style.boxShadow = 'none';
+        nav.style.backdropFilter = 'none';
+        nav.style.webkitBackdropFilter = 'none';
       }
 
       // Hide/show based on scroll direction (with threshold)
@@ -76,20 +82,36 @@
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
 
+    // Sliding green pill nav indicator — follows the hovered menu item
+    const navMenu = document.getElementById('nav-menu');
+    const navPill = document.getElementById('nav-pill');
+    if (navMenu && navPill) {
+      navMenu.querySelectorAll('.nav-tab').forEach(function (tab) {
+        tab.addEventListener('mouseenter', function () {
+          navPill.style.left = tab.offsetLeft + 'px';
+          navPill.style.width = tab.offsetWidth + 'px';
+          navPill.style.opacity = '1';
+        });
+      });
+      navMenu.addEventListener('mouseleave', function () {
+        navPill.style.opacity = '0';
+      });
+    }
+
     // Quick Quote side tab
     const quotePanel = document.getElementById('quote-panel');
     const quoteBtn   = document.getElementById('quote-tab-btn');
     let quoteManual  = false; // true once the user has manually toggled
 
     function openQuote() {
-      quotePanel.style.maxWidth = '272px';
+      quotePanel.style.maxWidth = '340px';
       quotePanel.dataset.open   = 'true';
-      quoteBtn.style.background = '#53A6DC';
+      quoteBtn.style.background = 'rgba(255,255,255,0.08)';
     }
     function closeQuote() {
       quotePanel.style.maxWidth = '0';
       quotePanel.dataset.open   = 'false';
-      quoteBtn.style.background = '#53A6DC';
+      quoteBtn.style.background = 'rgba(255,255,255,0.08)';
     }
     function toggleQuote() {
       quoteManual = true;
