@@ -122,15 +122,17 @@
       closeQuote();
     }
 
-    // Auto-open after 1s, auto-close when user scrolls
-    setTimeout(openQuote, 1000);
-    let autoRetracted = false;
-    window.addEventListener('scroll', function() {
-      if (!autoRetracted && !quoteManual && quotePanel.dataset.open === 'true' && window.scrollY > 80) {
-        closeQuote();
-        autoRetracted = true;
-      }
-    }, { passive: true });
+    // Auto-open after 1s, auto-close when user scrolls — only if the quote exists on this page
+    if (quotePanel && quoteBtn) {
+      setTimeout(openQuote, 1000);
+      let autoRetracted = false;
+      window.addEventListener('scroll', function() {
+        if (!autoRetracted && !quoteManual && quotePanel.dataset.open === 'true' && window.scrollY > 80) {
+          closeQuote();
+          autoRetracted = true;
+        }
+      }, { passive: true });
+    }
 
     const dz = document.getElementById('drop-zone');
     if (dz) {
