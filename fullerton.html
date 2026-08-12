@@ -8,6 +8,37 @@
     function gtag(){dataLayer.push(arguments);}
     gtag("js", new Date());
     gtag("config", "G-SPGTXCPJVT");
+    // Google Ads tag — captures the gclid so calls attribute to the ad that drove them
+    gtag("config", "AW-439799376");
+    // Google Ads call conversion: swap in the tracked forwarding number.
+    // Handled manually via callback so icon/"Call Now" buttons (no visible number)
+    // get their tel: href swapped too — Google's default swap skips those.
+    gtag("config", "AW-439799376/4Dq4CNv2keAcENCc29EB", {
+      "phone_conversion_number": "714-305-9263",
+      "phone_conversion_callback": function (formatted_number, mobile_number) {
+        var swap = function () {
+          document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+            if (mobile_number) {
+              el.setAttribute("href", "tel:" + mobile_number);
+            }
+            if (!formatted_number) { return; }
+            // Walk text nodes so inner markup (icons, spans) survives the swap
+            var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+            var node;
+            while ((node = walker.nextNode())) {
+              if (node.nodeValue.indexOf("714-305-9263") !== -1) {
+                node.nodeValue = node.nodeValue.split("714-305-9263").join(formatted_number);
+              }
+            }
+          });
+        };
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", swap);
+        } else {
+          swap();
+        }
+      }
+    });
     // Track phone-number clicks as a conversion-ready event
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
