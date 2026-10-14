@@ -18,12 +18,19 @@ const mime = {
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
+  '.webp': 'image/webp',
+  '.webmanifest': 'application/manifest+json',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
 };
 
 http.createServer((req, res) => {
   let urlPath = req.url.split('?')[0];           // strip ?v= cache-busting query strings
   if (urlPath === '/') urlPath = '/index.html';
-  const filePath = path.join(ROOT, urlPath);
+  let filePath = path.join(ROOT, urlPath);
+  // serve folder index.html (e.g. /help/, /book/) the way the live server does
+  if (urlPath.endsWith('/')) filePath = path.join(filePath, 'index.html');
+  else if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) filePath = path.join(filePath, 'index.html');
   const ext = path.extname(filePath);
   const type = mime[ext] || 'application/octet-stream';
 

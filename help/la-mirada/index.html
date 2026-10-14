@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPGTXCPJVT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-SPGTXCPJVT");
+    // Google Ads tag — captures the gclid so calls attribute to the ad that drove them
+    gtag("config", "AW-439799376");
+    // Google Ads call conversion: swap in the tracked forwarding number.
+    // Handled manually via callback so icon/"Call Now" buttons (no visible number)
+    // get their tel: href swapped too — Google's default swap skips those.
+    gtag("config", "AW-439799376/4Dq4CNv2keAcENCc29EB", {
+      "phone_conversion_number": "714-305-9263",
+      "phone_conversion_callback": function (formatted_number, mobile_number) {
+        var swap = function () {
+          document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+            if (mobile_number) {
+              el.setAttribute("href", "tel:" + mobile_number);
+            }
+            if (!formatted_number) { return; }
+            // Walk text nodes so inner markup (icons, spans) survives the swap
+            var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+            var node;
+            while ((node = walker.nextNode())) {
+              if (node.nodeValue.indexOf("714-305-9263") !== -1) {
+                node.nodeValue = node.nodeValue.split("714-305-9263").join(formatted_number);
+              }
+            }
+          });
+        };
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", swap);
+        } else {
+          swap();
+        }
+      }
+    });
+    // Track phone-number clicks as a conversion-ready event
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          gtag("event", "phone_call_click", { event_category: "engagement", event_label: el.getAttribute("href") });
+        });
+      });
+    });
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/png" href="/app/img/favicon-64.png">
+  <title>Sewer Camera Inspection &amp; Drain Cleaning in La Mirada, CA | Rooter Champion</title>
+  <meta name="description" content="La Mirada drain and sewer service: sewer camera inspection, $55 drain cleaning, hydro jetting, root removal and trenchless pipe lining. Family-owned, open 7 days 8am-5pm.">
+  <link rel="canonical" href="https://rooterchampion.net/help/la-mirada/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rooter Champion">
+  <meta property="og:title" content="Sewer Camera Inspection &amp; Drain Cleaning in La Mirada, CA | Rooter Champion">
+  <meta property="og:description" content="La Mirada drain and sewer service: sewer camera inspection, $55 drain cleaning, hydro jetting, root removal and trenchless pipe lining. Family-owned, open 7 days 8am-5pm.">
+  <meta property="og:url" content="https://rooterchampion.net/help/la-mirada/">
+  <meta property="og:image" content="https://rooterchampion.net/app/img/og-1200x630.jpg">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="manifest" href="/app/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/app/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rooter Champ">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Plumber", "name": "Rooter Champion", "url": "https://rooterchampion.net/help/la-mirada/", "logo": "https://rooterchampion.net/app/img/logo.png", "image": "https://rooterchampion.net/app/img/og-1200x630.jpg", "telephone": "+1-714-305-9263", "description": "Family-owned drain, sewer and hydro jetting company based in La Habra, CA, serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities. Drain cleaning, hydro jetting, sewer camera inspection, trenchless pipe lining and root removal. CA License #1063585.", "address": {"@type": "PostalAddress", "streetAddress": "1401 S Beach Blvd Unit A", "addressLocality": "La Habra", "addressRegion": "CA", "postalCode": "90631", "addressCountry": "US"}, "areaServed": {"@type": "City", "name": "La Mirada, CA"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "08:00", "closes": "17:00"}], "knowsAbout": ["Drain cleaning", "Hydro jetting", "Sewer camera inspection", "Trenchless sewer repair", "Pipe lining", "Tree root removal"], "makesOffer": {"@type": "Offer", "price": "55", "priceCurrency": "USD", "itemOffered": {"@type": "Service", "name": "Drain cleaning with free camera inspection"}}, "@id": "https://rooterchampion.net/help/la-mirada/#service", "parentOrganization": {"@id": "https://rooterchampion.net/#business"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why should I get a sewer camera inspection?", "acceptedAnswer": {"@type": "Answer", "text": "It shows whether a clog is roots, grease, broken pipe or old cast iron, so you know the right fix before paying for bigger work."}}, {"@type": "Question", "name": "Do you serve La Mirada on weekends?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We are open 7 days a week, 8am to 5pm."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rooterchampion.net/"},{"@type":"ListItem","position":2,"name":"Drain help","item":"https://rooterchampion.net/help/"},{"@type":"ListItem","position":3,"name":"Sewer Camera Inspection and Drain Cleaning in La Mirada","item":"https://rooterchampion.net/help/la-mirada/"}]}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { 'rc-black':'#010000','rc-night':'#0A1628','rc-ink':'#0A1220','rc-navy':'#274A6A','rc-blue':'#53A6DC','rc-green':'#81B752','rc-light':'#EFF0F1' },
+        fontFamily: { heading:['"Barlow Condensed"','"Arial Narrow"','Arial','sans-serif'], body:['"DM Sans"','Arial','sans-serif'] }
+      } }
+    }
+  </script>
+  <link rel="stylesheet" href="/app/app.css?v=5">
+  <script type="speculationrules">{"prefetch":[{"where":{"or":[{"href_matches":"/help/*"},{"href_matches":"/book/"}]},"eagerness":"moderate"}]}</script>
+</head>
+<body class="bg-white text-[#0A1220] font-body rc-pad ">
+
+  <!-- ===== HEADER (matches rooterchampion.net) ===== -->
+  <header class="rc-header bg-[#0A1628] border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
+      <a href="/" class="flex items-center gap-3 sm:gap-4 min-w-0" aria-label="Rooter Champion home">
+        <img src="/app/img/logo.webp" alt="Rooter Champion" class="h-9 sm:h-12 w-auto" width="167" height="48">
+        <span class="font-heading font-bold uppercase tracking-wider text-[12px] sm:text-sm text-white/80 leading-tight border-l border-white/25 pl-3 sm:pl-4">Sewer &amp; Drain<br class="sm:hidden"><span class="hidden sm:inline"> &middot; </span>Experts</span>
+      </a>
+      <nav class="flex items-center gap-5 lg:gap-7" aria-label="Main">
+        <div class="hidden md:flex items-center gap-5 lg:gap-7"><a href="/help/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px] text-white underline underline-offset-8 decoration-2 decoration-[#81B752]" aria-current="page">Drain Help</a><a href="/help/check/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px]">Check My Problem</a><a href="/book/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px]">Book Online</a></div>
+        <a href="tel:7143059263" class="btn-call text-sm sm:text-base px-4 sm:px-5 py-2.5">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <span class="hidden sm:inline">714-305-9263</span><span class="sm:hidden">Call</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+  <section class="rc-hero text-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 pt-6 pb-10 lg:pb-14">
+      <nav aria-label="Breadcrumb" class="text-sm text-white/60"><a href="/" class="hover:underline">Home</a> <span aria-hidden="true">&rsaquo;</span> <a href="/help/" class="hover:underline">Drain help</a> <span aria-hidden="true">&rsaquo;</span> <span class="text-white/85">La Mirada</span></nav>
+      <p class="font-heading font-extrabold uppercase tracking-wide text-sm text-[#53A6DC] mt-6">Drain &amp; sewer help by city</p>
+      <h1 class="font-heading font-extrabold leading-[1.1] mt-3" style="font-size:clamp(1.9rem,4.4vw,3rem)">Sewer Camera Inspection and Drain Cleaning in La Mirada</h1>
+      <p class="text-lg text-white/85 mt-4 max-w-3xl leading-relaxed">In La Mirada, a lot of our calls start the same way: the main line was cleared once, and now it&rsquo;s slow again. The fix depends on what is causing it, so we put a camera in the line and show you.</p>
+      <p class="text-white/75 mt-3 text-[15px] font-semibold">Open 7 days, 8am&ndash;5pm &middot; We respond within 1 hour &middot; Family-owned, not a franchise</p>
+      <div class="flex flex-col sm:flex-row gap-3 mt-6"><a href="/book/#drain" data-book-type="drain" class="btn-call text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg> Book a $55 drain cleaning</a><a href="tel:7143059263" class="btn-dark ring-2 ring-white/30 text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Call 714-305-9263</a></div>
+    </div>
+  </section>
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 py-10 lg:py-14 grid lg:grid-cols-[1fr_320px] gap-10">
+    <article class="rc-prose min-w-0">
+      <section><h2 class="!mt-0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 10-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Common drain and sewer problems in La Mirada</h2>
+        <p>What the camera usually finds here: <strong>tree roots</strong> at the pipe joints, <strong>old cast iron</strong> with heavy scale or rust, and <strong>broken or offset sewer pipe</strong>. Roots can be cut and the line hydro jetted; pipe that keeps failing can often be lined without trenching. Read <a class="underline font-semibold" href="/help/sewer-pipe-repair-trenchless/">trenchless sewer repair</a> and <a class="underline font-semibold" href="/help/tree-roots-sewer/">tree roots in the sewer line</a>.</p>
+        <figure class="my-5"><img src="/app/img/sewer-camera-inspection-roots-la-mirada.webp" alt="Sewer camera inspection finding tree roots in a main line in La Mirada" width="900" height="900" loading="lazy" decoding="async" class="rc-photo"><figcaption class="text-sm text-[#0A1220]/60 mt-2">Our sewer camera finding roots inside a main line.</figcaption></figure></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 10-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> What we do in La Mirada</h2>
+        <ul>
+          <li><strong>$55 drain cleaning with a free camera inspection</strong> for sinks, tubs, showers, toilets and laundry lines. (Yard and area drains are hydro jetted and priced by estimate.)</li>
+          <li><strong>Hydro jetting</strong> for grease, roots and yard drains. See <a class="underline font-semibold" href="/help/kitchen-sink-grease/">kitchen grease clogs</a> and <a class="underline font-semibold" href="/help/yard-area-drain/">yard drains</a>.</li>
+          <li><strong>Sewer camera inspection</strong> so you see what is in the line before deciding anything.</li>
+          <li><strong>Trenchless pipe lining</strong> for cracked or failing sewer pipe. See <a class="underline font-semibold" href="/help/sewer-pipe-repair-trenchless/">broken sewer pipe and trenchless repair</a>.</li>
+        </ul>
+        <p>Single clogs in a sink, tub or toilet are covered by our $55 drain cleaning, which includes a free camera inspection. We aim to respond within 1 hour, 7 days a week, 8am&ndash;5pm.</p>
+        <div class="flex flex-col sm:flex-row gap-3 mt-6"><a href="/book/#drain" data-book-type="drain" class="btn-call text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg> Book a $55 drain cleaning</a><a href="tel:7143059263" class="btn-dark text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Call 714-305-9263</a></div></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg> What customers say</h2><p class="text-sm text-[#0A1220]/60">5.0 stars from 52 Google reviews on our La Habra profile.</p><div class="grid sm:grid-cols-2 gap-3 mt-3"><figure class="rc-card block"><div class="text-[#81B752] font-bold" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote class="mt-1">&ldquo;Timely. Quick and efficient.&rdquo;</blockquote><figcaption class="text-sm font-semibold mt-2">Yvonne C. &middot; La Mirada</figcaption></figure><figure class="rc-card block"><div class="text-[#81B752] font-bold" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote class="mt-1">&ldquo;The young man who showed up was excellent. He explained and showed me via video scope exactly what the issue was and got it back to functional. Great service!&rdquo;</blockquote><figcaption class="text-sm font-semibold mt-2">Arthur V. &middot; Santa Ana</figcaption></figure><figure class="rc-card block"><div class="text-[#81B752] font-bold" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote class="mt-1">&ldquo;I was in a plumbing crisis with flooding from a sewer line. Another plumber’s quote would’ve required a second mortgage. I got a second opinion with Rooter Champion — David was excellent, professional, and gave me an honest assessment at a fair price. Look no further!&rdquo;</blockquote><figcaption class="text-sm font-semibold mt-2">Douglas H. &middot; Buena Park</figcaption></figure></div></section>
+      <section class="rc-faq"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 10-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Common questions</h2>
+<details open><summary>Why should I get a sewer camera inspection?</summary><p>It shows whether a clog is roots, grease, broken pipe or old cast iron, so you know the right fix before paying for bigger work.</p></details><details><summary>Do you serve La Mirada on weekends?</summary><p>Yes. We are open 7 days a week, 8am to 5pm.</p></details>
+      </section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 10-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Drain guides</h2><p><a class="underline font-semibold" href="/help/clogged-toilet/">Clogged toilet</a> &middot; <a class="underline font-semibold" href="/help/kitchen-sink-grease/">Kitchen sink grease</a> &middot; <a class="underline font-semibold" href="/help/bathroom-sink-clog/">Bathroom sink</a> &middot; <a class="underline font-semibold" href="/help/shower-tub-drain/">Shower or tub</a> &middot; <a class="underline font-semibold" href="/help/laundry-drain-overflow/">Laundry drain</a> &middot; <a class="underline font-semibold" href="/help/gurgling-drains/">Gurgling drains</a> &middot; <a class="underline font-semibold" href="/help/sewer-smell/">Sewer smell</a> &middot; <a class="underline font-semibold" href="/help/main-sewer-line-clog/">Main sewer line</a> &middot; <a class="underline font-semibold" href="/help/sewage-backup-emergency/">Sewage backup</a> &middot; <a class="underline font-semibold" href="/help/tree-roots-sewer/">Tree roots</a> &middot; <a class="underline font-semibold" href="/help/sewer-pipe-repair-trenchless/">Trenchless repair</a> &middot; <a class="underline font-semibold" href="/help/yard-area-drain/">Yard drains</a> &middot; <a class="underline font-semibold" href="/help/check/">Check my problem</a></p>
+        <p class="text-sm">Also serving: <a class="underline font-semibold" href="/help/la-habra/">La Habra</a> &middot; <a class="underline font-semibold" href="/help/fullerton/">Fullerton</a> &middot; <a class="underline font-semibold" href="/help/whittier/">Whittier</a> and surrounding cities.</p></section>
+      <section class="mt-10 rounded-xl bg-[#EAF2F8] p-5 sm:p-6">
+        <h2 class="!mt-0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 10-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Rooter Champion</h2>
+        <p>Family-owned drain and sewer company, 1401 S Beach Blvd Unit A, La Habra, CA 90631. Call <a href="tel:7143059263" class="font-bold underline">714-305-9263</a>. Open 7 days, 8am&ndash;5pm. We respond within 1 hour. CA Lic. #1063585.</p>
+      </section>
+    </article>
+    <aside class="lg:sticky lg:top-6 self-start">
+      <div class="offer rounded-md text-white p-6 text-center" style="box-shadow:0 18px 40px -12px rgba(0,0,0,0.45)">
+        <p class="font-heading font-extrabold uppercase text-sm tracking-wide text-[#53A6DC]">La Mirada special</p>
+        <p class="font-heading font-extrabold text-2xl mt-2 leading-tight">$55 drain cleaning + free camera inspection</p>
+        <p class="text-white/75 mt-3 text-sm leading-relaxed">Sinks, tubs, showers, toilets and laundry lines. Yard drains are hydro jetted and priced by estimate.</p>
+        <div class="mt-5"><a href="/book/#drain" data-book-type="drain" class="btn-call text-lg px-6 py-4 w-full"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg> Book a $55 drain cleaning</a><a href="tel:7143059263" class="btn-dark text-lg px-6 py-4 w-full mt-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Call 714-305-9263</a></div>
+      </div>
+    </aside>
+  </div>
+  </main>
+
+  <!-- ===== FOOTER (matches rooterchampion.net) ===== -->
+  <footer class="bg-[#0A1628] text-white/60 text-sm py-10 pb-28 sm:pb-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 grid gap-8 sm:grid-cols-[auto_1fr_1fr]">
+      <div><a href="/"><img src="/app/img/logo.webp" alt="Rooter Champion" class="h-10 w-auto" width="139" height="40" loading="lazy"></a>
+        <p class="mt-3 max-w-xs">Family-owned sewer &amp; drain experts based in La Habra.</p></div>
+      <div class="leading-relaxed">
+        <p class="font-heading font-bold uppercase tracking-wider text-white/85 mb-2">Drain help</p>
+        <p><a href="/help/" class="hover:underline">Drain help guides</a><br><a href="/help/check/" class="hover:underline">Check my problem</a><br><a href="/book/" class="hover:underline">Book online</a><br><a href="/" class="hover:underline">rooterchampion.net home</a> &middot; <a href="/service-areas.html" class="hover:underline">Service areas</a> &middot; <a href="/privacy.html" class="hover:underline">Privacy</a></p>
+      </div>
+      <div class="leading-relaxed">
+        <p class="font-heading font-bold uppercase tracking-wider text-white/85 mb-2">Rooter Champion</p>
+        <p><a href="tel:7143059263" class="text-white font-semibold hover:underline focus-visible:underline">714-305-9263</a> &middot; Open 7 days, 8am&ndash;5pm &middot; We respond within 1 hour</p>
+        <p>1401 S Beach Blvd Unit A, La Habra, CA 90631</p>
+        <p>Serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities</p>
+        <p>Family-owned &middot; Licensed &amp; insured &middot; CA Lic. #1063585</p>
+        <p class="text-white/40 mt-1">&copy; 2026 Rooter Champion</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== APP TAB BAR (mobile) ===== -->
+  <nav class="rc-tabs" aria-label="App">
+    <a href="/help/" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-1 .6-1.5 1.2-1.5 2.2M12 17v.5"/></svg><span>Help</span></a>
+    <a href="/help/check/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16l1.5 1.5L12 15"/></svg><span>Check</span></a>
+    <a href="/book/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg><span>Book</span></a>
+    <a href="tel:7143059263" class="rc-tab-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><span>Call</span></a>
+  </nav>
+
+  <script src="/app/app.js?v=6" defer></script>
+</body>
+</html>

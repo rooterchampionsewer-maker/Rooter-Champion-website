@@ -1,0 +1,9 @@
+# SUGGESTION ONLY. Do not upload over the existing https://rooterchampion.net/robots.txt.
+# If the site already has a robots.txt, just add the Sitemap line below to it.
+# The app pages (/help/, /book/) are meant to be crawled; /booked/ and /offline/ are utility pages.
+User-agent: *
+Disallow: /booked/
+Disallow: /offline/
+
+Sitemap: https://rooterchampion.net/sitemap.xml
+Sitemap: https://rooterchampion.net/app/sitemap-app.xml

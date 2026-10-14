@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Rooter Champion drain help app pages. Submit in Search Console as an extra sitemap:
+     https://rooterchampion.net/app/sitemap-app.xml  (the main /sitemap.xml is left untouched) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://rooterchampion.net/help/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/check/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/bathroom-sink-clog/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/clogged-toilet/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/fullerton/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/gurgling-drains/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/kitchen-sink-grease/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/la-habra/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/la-mirada/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/laundry-drain-overflow/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/main-sewer-line-clog/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/sewage-backup-emergency/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/sewer-pipe-repair-trenchless/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/sewer-smell/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/shower-tub-drain/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/tree-roots-sewer/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/whittier/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/help/yard-area-drain/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://rooterchampion.net/book/</loc><lastmod>2026-10-13</lastmod></url>
+</urlset>

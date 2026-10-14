@@ -1,0 +1,8 @@
+# Rooter Champion app: lets /app/sw.js control the /help/ and /book/ pages (offline guides).
+# Affects files inside /app/ only. If your server lacks mod_headers this does nothing and the app still works (no offline mode).
+<IfModule mod_headers.c>
+  <Files "sw.js">
+    Header set Service-Worker-Allowed "/"
+    Header set Cache-Control "no-cache"
+  </Files>
+</IfModule>

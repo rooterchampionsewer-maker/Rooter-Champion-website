@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPGTXCPJVT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-SPGTXCPJVT");
+    // Google Ads tag — captures the gclid so calls attribute to the ad that drove them
+    gtag("config", "AW-439799376");
+    // Google Ads call conversion: swap in the tracked forwarding number.
+    // Handled manually via callback so icon/"Call Now" buttons (no visible number)
+    // get their tel: href swapped too — Google's default swap skips those.
+    gtag("config", "AW-439799376/4Dq4CNv2keAcENCc29EB", {
+      "phone_conversion_number": "714-305-9263",
+      "phone_conversion_callback": function (formatted_number, mobile_number) {
+        var swap = function () {
+          document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+            if (mobile_number) {
+              el.setAttribute("href", "tel:" + mobile_number);
+            }
+            if (!formatted_number) { return; }
+            // Walk text nodes so inner markup (icons, spans) survives the swap
+            var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+            var node;
+            while ((node = walker.nextNode())) {
+              if (node.nodeValue.indexOf("714-305-9263") !== -1) {
+                node.nodeValue = node.nodeValue.split("714-305-9263").join(formatted_number);
+              }
+            }
+          });
+        };
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", swap);
+        } else {
+          swap();
+        }
+      }
+    });
+    // Track phone-number clicks as a conversion-ready event
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          gtag("event", "phone_call_click", { event_category: "engagement", event_label: el.getAttribute("href") });
+        });
+      });
+    });
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <link rel="icon" type="image/png" href="/app/img/favicon-64.png">
+  <title>Sewer Smell in Your House or Yard in Fullerton? Common Causes | Rooter Champion</title>
+  <meta name="description" content="Smell sewage indoors or in the yard? Easy checks for dry drain traps and toilet seals, gas-leak safety, and when to book a sewer camera inspection in La Habra, Fullerton, La Mirada, Whittier &amp; nearby cities.">
+  <link rel="canonical" href="https://rooterchampion.net/help/sewer-smell/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rooter Champion">
+  <meta property="og:title" content="Sewer Smell in Your House or Yard in Fullerton? Common Causes | Rooter Champion">
+  <meta property="og:description" content="Smell sewage indoors or in the yard? Easy checks for dry drain traps and toilet seals, gas-leak safety, and when to book a sewer camera inspection in La Habra, Fullerton, La Mirada, Whittier &amp; nearby cities.">
+  <meta property="og:url" content="https://rooterchampion.net/help/sewer-smell/">
+  <meta property="og:image" content="https://rooterchampion.net/app/img/og-1200x630.jpg">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="manifest" href="/app/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/app/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rooter Champ">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Plumber","@id":"https://rooterchampion.net/#business","name":"Rooter Champion","url":"https://rooterchampion.net/","logo":"https://rooterchampion.net/app/img/logo.png","image":"https://rooterchampion.net/app/img/og-1200x630.jpg","telephone":"+1-714-305-9263","description":"Family-owned drain, sewer and hydro jetting company based in La Habra, CA, serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities. Drain cleaning, hydro jetting, sewer camera inspection, trenchless pipe lining and root removal. CA License #1063585.","address":{"@type":"PostalAddress","streetAddress":"1401 S Beach Blvd Unit A","addressLocality":"La Habra","addressRegion":"CA","postalCode":"90631","addressCountry":"US"},"areaServed":[{"@type":"City","name":"La Habra, CA"},{"@type":"City","name":"Fullerton, CA"},{"@type":"City","name":"La Mirada, CA"},{"@type":"City","name":"Whittier, CA"},{"@type":"City","name":"Brea, CA"},{"@type":"City","name":"Placentia, CA"},{"@type":"City","name":"Anaheim, CA"},{"@type":"City","name":"Buena Park, CA"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Drain cleaning","Hydro jetting","Sewer camera inspection","Trenchless sewer repair","Pipe lining","Tree root removal"],"makesOffer":{"@type":"Offer","price":"55","priceCurrency":"USD","itemOffered":{"@type":"Service","name":"Drain cleaning with free camera inspection"}}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does my guest bathroom smell like sewer?", "acceptedAnswer": {"@type": "Answer", "text": "Most often the trap under an unused sink, shower or floor drain has dried out. Running water for 30 seconds usually fixes it. If it does not, call us."}}, {"@type": "Question", "name": "Is sewer gas dangerous?", "acceptedAnswer": {"@type": "Answer", "text": "Sewer gas is unpleasant and in high amounts can be harmful, so do not ignore a strong or lasting smell. If it could be natural gas, leave and call your gas company or 911."}}, {"@type": "Question", "name": "Can a cracked sewer pipe cause a smell in the yard?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A cracked or broken line can let sewage and odor into the soil, often with a soggy patch above it. A camera inspection shows where."}}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rooterchampion.net/"},{"@type":"ListItem","position":2,"name":"Drain help","item":"https://rooterchampion.net/help/"},{"@type":"ListItem","position":3,"name":"Sewer Smell in the House or Yard","item":"https://rooterchampion.net/help/sewer-smell/"}]}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { 'rc-black':'#010000','rc-night':'#0A1628','rc-ink':'#0A1220','rc-navy':'#274A6A','rc-blue':'#53A6DC','rc-green':'#81B752','rc-light':'#EFF0F1' },
+        fontFamily: { heading:['"Barlow Condensed"','"Arial Narrow"','Arial','sans-serif'], body:['"DM Sans"','Arial','sans-serif'] }
+      } }
+    }
+  </script>
+  <link rel="stylesheet" href="/app/app.css?v=5">
+  <script type="speculationrules">{"prefetch":[{"where":{"or":[{"href_matches":"/help/*"},{"href_matches":"/book/"}]},"eagerness":"moderate"}]}</script>
+</head>
+<body class="bg-white text-[#0A1220] font-body rc-pad ">
+
+  <!-- ===== HEADER (matches rooterchampion.net) ===== -->
+  <header class="rc-header bg-[#0A1628] border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
+      <a href="/" class="flex items-center gap-3 sm:gap-4 min-w-0" aria-label="Rooter Champion home">
+        <img src="/app/img/logo.webp" alt="Rooter Champion" class="h-9 sm:h-12 w-auto" width="167" height="48">
+        <span class="font-heading font-bold uppercase tracking-wider text-[12px] sm:text-sm text-white/80 leading-tight border-l border-white/25 pl-3 sm:pl-4">Sewer &amp; Drain<br class="sm:hidden"><span class="hidden sm:inline"> &middot; </span>Experts</span>
+      </a>
+      <nav class="flex items-center gap-5 lg:gap-7" aria-label="Main">
+        <div class="hidden md:flex items-center gap-5 lg:gap-7"><a href="/help/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px] text-white underline underline-offset-8 decoration-2 decoration-[#81B752]" aria-current="page">Drain Help</a><a href="/help/check/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px]">Check My Problem</a><a href="/book/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px]">Book Online</a></div>
+        <a href="tel:7143059263" class="btn-call text-sm sm:text-base px-4 sm:px-5 py-2.5">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <span class="hidden sm:inline">714-305-9263</span><span class="sm:hidden">Call</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+  <section class="rc-hero text-white">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 pt-6 pb-10 lg:pb-14">
+      <nav aria-label="Breadcrumb" class="text-sm text-white/60"><a href="/" class="hover:underline">Home</a> <span aria-hidden="true">&rsaquo;</span> <a href="/help/" class="hover:underline">Drain help</a> <span aria-hidden="true">&rsaquo;</span> <span class="text-white/85">Sewer smell</span></nav>
+      <div class="flex items-center gap-3 mt-6 text-[#53A6DC]"><svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20c0-3 3-3 3-6s-3-3-3-6"/><path d="M12 20c0-3 3-3 3-6s-3-3-3-6"/><path d="M18 20c0-3 3-3 3-6s-3-3-3-6"/></svg><p class="font-heading font-extrabold uppercase tracking-wide text-sm">Drain help guide</p></div>
+      <h1 class="font-heading font-extrabold leading-[1.1] mt-3" style="font-size:clamp(1.9rem,4.4vw,3rem)">Sewer Smell in the House or Yard in Fullerton</h1>
+      <p class="text-lg text-white/85 mt-4 max-w-3xl leading-relaxed">A sewer smell can come from something as simple as a drain that has not been used in a while, or from a cracked pipe under the house or yard. A few easy checks can narrow it down.</p>
+      <p class="text-white/75 mt-3 text-[15px] font-semibold">Serving La Habra, Fullerton, La Mirada, Whittier and nearby cities.</p>
+      
+      <div class="flex flex-col sm:flex-row gap-3 mt-6"><a href="/book/#camera" data-book-type="camera" class="btn-call text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg> Book a camera inspection / estimate</a><a href="tel:7143059263" class="btn-dark ring-2 ring-white/30 text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Call 714-305-9263</a></div>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-5 sm:px-6 py-10 lg:py-14 grid lg:grid-cols-[1fr_320px] gap-10">
+    <article class="rc-prose min-w-0">
+      <section><h2 class="!mt-0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg> What you might notice</h2>
+        <ul>
+          <li>A sewage or rotten-egg smell in a bathroom, laundry room or garage</li>
+          <li>The smell is worse near one drain or toilet</li>
+          <li>A smell outside, sometimes with a soggy or extra-green patch in the yard</li>
+          <li>The smell comes and goes, often after heavy water use</li>
+        </ul></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg> Likely causes</h2>
+        <ul>
+          <li>A dry P-trap in a drain that is rarely used (guest bath, floor drain, laundry)</li>
+          <li>A worn wax ring or loose toilet, letting sewer gas out at the base</li>
+          <li>Gunk built up in a sink overflow or drain</li>
+          <li>A cracked, broken or disconnected sewer pipe</li>
+          <li>A vent problem that lets sewer gas into the house</li>
+        </ul></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.1L3 17.7 6.3 21l6.3-6.3a4 4 0 005.1-5.4l-2.4 2.4-2.4-.6-.6-2.4z"/></svg> Safe things to try first</h2>
+        <ol>
+          <li>Safety first: if it smells like rotten eggs and you have gas appliances, it could be a gas leak. Leave the house and call your gas company or 911 from outside.</li>
+          <li>Run water for 30 seconds in every drain that is rarely used, including floor drains and guest showers. This refills the trap that blocks sewer gas.</li>
+          <li>Check whether the toilet rocks or has water around the base.</li>
+          <li>Clean the sink overflow hole and drain stopper.</li>
+          <li>Walk the yard over the sewer line and look for soggy, sunken or extra-green spots.</li>
+        </ol>
+        <div class="rc-warn"><strong>Why we don&rsquo;t recommend chemical drain cleaners:</strong> Skip the chemical drain cleaners. They are strong caustics or acids that can burn skin and eyes, can damage older pipes and fittings, and often only eat a small hole through the clog. When they do not work, the drain is left full of chemical water that can splash you or whoever opens the line next. Never mix drain products, because some combinations give off toxic fumes.</div>
+        <p class="text-sm text-[#0A1220]/60">If water starts rising or you see sewage, stop and call. Don&rsquo;t take apart anything you&rsquo;re not comfortable putting back together.</p></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg> When to call a pro</h2>
+        <ul>
+          <li>The smell keeps coming back after you refill the traps</li>
+          <li>You see a soggy or sunken spot in the yard over the sewer line</li>
+          <li>The smell comes with slow drains or gurgling</li>
+          <li>You cannot find where it is coming from</li>
+        </ul>
+        <div class="rc-urgent mt-6"><strong>Sewage coming up right now?</strong> Stop using water and call <a href="tel:7143059263" class="font-bold underline">714-305-9263</a> now. Don&rsquo;t wait to book online.</div></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="14" height="11" rx="2"/><path d="M16 11l6-3v9l-6-3"/><circle cx="9" cy="12.5" r="2.5"/></svg> What Rooter Champion does</h2>
+        <figure class="my-5"><img src="/app/img/broken-sewer-pipe-fullerton.webp" alt="Cracked and broken sewer pipe that can cause a sewer smell in the yard, found in Fullerton" width="900" height="600" loading="lazy" decoding="async" class="rc-photo"><figcaption class="text-sm text-[#0A1220]/60 mt-2">A cracked, broken section of old sewer pipe.</figcaption></figure>
+        <p><strong>Most common problems we find in La Habra, Fullerton, La Mirada and Whittier:</strong> tree roots in the sewer line, old or failing cast iron pipe, and broken sewer pipes. Many homes here still have their original lines, so a camera inspection is the quickest way to know which one you have.</p>
+        <p>A sewer camera inspection is the best way to find a hidden cause. We run a camera through the line and show you the footage live, so you can see any cracks, gaps, roots or breaks. If the line needs repair, we explain options like trenchless pipe lining or pipe bursting before any work is scheduled.</p>
+        <p data-ctx>A smell plus a soggy yard can mean a <a class="underline font-semibold" href="/help/sewer-pipe-repair-trenchless/">broken sewer pipe</a>; roots that crack the line are covered in <a class="underline font-semibold" href="/help/tree-roots-sewer/">tree roots</a>. Local to us? See <a class="underline font-semibold" href="/help/fullerton/">drain service in Fullerton</a>.</p>
+        <p>Our $55 drain cleaning includes a free camera inspection, so you can see the problem for yourself. Rooter Champion is family-owned, licensed and insured (CA Lic. #1063585).</p>
+        <div class="flex flex-col sm:flex-row gap-3 mt-6"><a href="/book/#camera" data-book-type="camera" class="btn-call text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg> Book a camera inspection / estimate</a><a href="tel:7143059263" class="btn-dark text-lg px-6 py-4 w-full sm:w-auto"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Call 714-305-9263</a></div></section>
+      <section class="rc-faq"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-1 .6-1.5 1.2-1.5 2.2M12 17v.5"/></svg> Common questions</h2>
+<details open><summary>Why does my guest bathroom smell like sewer?</summary><p>Most often the trap under an unused sink, shower or floor drain has dried out. Running water for 30 seconds usually fixes it. If it does not, call us.</p></details>
+<details><summary>Is sewer gas dangerous?</summary><p>Sewer gas is unpleasant and in high amounts can be harmful, so do not ignore a strong or lasting smell. If it could be natural gas, leave and call your gas company or 911.</p></details>
+<details><summary>Can a cracked sewer pipe cause a smell in the yard?</summary><p>Yes. A cracked or broken line can let sewage and odor into the soil, often with a soggy patch above it. A camera inspection shows where.</p></details>
+      </section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg> What customers say</h2><p class="text-sm text-[#0A1220]/60">5.0 stars from 52 Google reviews on our La Habra profile.</p><div class="grid sm:grid-cols-2 gap-3 mt-3"><figure class="rc-card block"><div class="text-[#81B752] font-bold" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote class="mt-1">&ldquo;Bryan is a professional who cares about your home. Our sink had a recurring drainage issue. Bryan and crew properly diagnosed it and got right to work. No more odor or gurgling. Thanks again!&rdquo;</blockquote><figcaption class="text-sm font-semibold mt-2">Jimmy B. &middot; La Habra</figcaption></figure><figure class="rc-card block"><div class="text-[#81B752] font-bold" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote class="mt-1">&ldquo;The young man who showed up was excellent. He explained and showed me via video scope exactly what the issue was and got it back to functional. Great service!&rdquo;</blockquote><figcaption class="text-sm font-semibold mt-2">Arthur V. &middot; Santa Ana</figcaption></figure></div></section>
+      <section><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg> Related guides</h2>
+        <div class="grid sm:grid-cols-2 gap-3 mt-3">
+<a class="rc-card" href="/help/gurgling-drains/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"/><circle cx="16" cy="9" r="3"/><circle cx="17" cy="17" r="2"/></svg><div><b>Gurgling Drains or a Bubbling Toilet</b><span>Gurgling means air is being pulled through a drain, usually from a partial clog or a vent problem.</span></div></a>
+<a class="rc-card" href="/help/sewer-pipe-repair-trenchless/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9h8v6H2zM14 9h8v6h-8z"/><path d="M10 10l1.5 1-1 1.5 1.5 1.5"/></svg><div><b>Broken or Old Sewer Pipe and Trenchless Repair</b><span>Older clay and cast iron pipe can crack, sag or separate. A camera shows the damage; trenchless lining can fix many lines without digging.</span></div></a>
+<a class="rc-card" href="/help/tree-roots-sewer/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v7"/><path d="M12 10c-3 1-5 4-6 8M12 10c3 1 5 4 6 8M12 10v11M9 15l-3 1M15 15l3 1"/></svg><div><b>Tree Roots in the Sewer Line</b><span>Roots slip into older pipe joints and cracks looking for water, causing main line clogs that keep coming back.</span></div></a>
+          <a class="rc-card" href="/help/check/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16l1.5 1.5L12 15"/></svg><div><b>Not sure? Check my problem</b><span>Answer 4 quick questions and we&rsquo;ll point you to the right guide.</span></div></a>
+        </div></section>
+
+      <section class="mt-10 rounded-xl bg-[#EAF2F8] p-5 sm:p-6">
+        <h2 class="!mt-0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 10-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Local, family-owned, based in La Habra</h2>
+        <p>Rooter Champion is a family-owned drain and sewer company at 1401 S Beach Blvd Unit A, La Habra, CA 90631. We serve homes and businesses in <a class="underline font-semibold" href="/la-habra.html">La Habra</a>, <a class="underline font-semibold" href="/fullerton.html">Fullerton</a>, <a class="underline font-semibold" href="/service-areas.html">La Mirada</a>, <a class="underline font-semibold" href="/service-areas.html">Whittier</a> and surrounding cities, including <a class="underline font-semibold" href="/brea.html">Brea</a>, <a class="underline font-semibold" href="/placentia.html">Placentia</a>, <a class="underline font-semibold" href="/anaheim.html">Anaheim</a> and <a class="underline font-semibold" href="/buena-park.html">Buena Park</a>.</p>
+        <p>Open 7 days, 8am&ndash;5pm. We respond within 1 hour. Licensed &amp; insured, CA Lic. #1063585.</p>
+      </section>
+    </article>
+    <aside class="lg:sticky lg:top-6 self-start">
+      <div class="offer rounded-md text-white p-6 text-center" style="box-shadow:0 18px 40px -12px rgba(0,0,0,0.45)">
+        <img src="/app/img/g-sewer-smell.webp" alt="Rooter Champion at work: sewer smell" width="720" height="480" loading="lazy" decoding="async" class="rc-photo -mt-2 mb-5">
+        <p class="font-heading font-extrabold uppercase text-sm tracking-wide text-[#53A6DC]">Recommended</p>
+        <p class="font-heading font-extrabold text-2xl mt-2 leading-tight">Sewer camera inspection</p>
+        <p class="text-white/75 mt-3 text-sm leading-relaxed">You&rsquo;ll see the camera footage, and we explain what we found before any bigger work.</p>
+        <div class="mt-5"><a href="/book/#camera" data-book-type="camera" class="btn-call text-lg px-6 py-4 w-full"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg> Book a camera inspection / estimate</a><a href="tel:7143059263" class="btn-dark text-lg px-6 py-4 w-full mt-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Call 714-305-9263</a></div>
+      </div>
+    </aside>
+  </div>
+  </main>
+
+  <!-- ===== FOOTER (matches rooterchampion.net) ===== -->
+  <footer class="bg-[#0A1628] text-white/60 text-sm py-10 pb-28 sm:pb-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 grid gap-8 sm:grid-cols-[auto_1fr_1fr]">
+      <div><a href="/"><img src="/app/img/logo.webp" alt="Rooter Champion" class="h-10 w-auto" width="139" height="40" loading="lazy"></a>
+        <p class="mt-3 max-w-xs">Family-owned sewer &amp; drain experts based in La Habra.</p></div>
+      <div class="leading-relaxed">
+        <p class="font-heading font-bold uppercase tracking-wider text-white/85 mb-2">Drain help</p>
+        <p><a href="/help/" class="hover:underline">Drain help guides</a><br><a href="/help/check/" class="hover:underline">Check my problem</a><br><a href="/book/" class="hover:underline">Book online</a><br><a href="/" class="hover:underline">rooterchampion.net home</a> &middot; <a href="/service-areas.html" class="hover:underline">Service areas</a> &middot; <a href="/privacy.html" class="hover:underline">Privacy</a></p>
+      </div>
+      <div class="leading-relaxed">
+        <p class="font-heading font-bold uppercase tracking-wider text-white/85 mb-2">Rooter Champion</p>
+        <p><a href="tel:7143059263" class="text-white font-semibold hover:underline focus-visible:underline">714-305-9263</a> &middot; Open 7 days, 8am&ndash;5pm &middot; We respond within 1 hour</p>
+        <p>1401 S Beach Blvd Unit A, La Habra, CA 90631</p>
+        <p>Serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities</p>
+        <p>Family-owned &middot; Licensed &amp; insured &middot; CA Lic. #1063585</p>
+        <p class="text-white/40 mt-1">&copy; 2026 Rooter Champion</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== APP TAB BAR (mobile) ===== -->
+  <nav class="rc-tabs" aria-label="App">
+    <a href="/help/" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-1 .6-1.5 1.2-1.5 2.2M12 17v.5"/></svg><span>Help</span></a>
+    <a href="/help/check/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16l1.5 1.5L12 15"/></svg><span>Check</span></a>
+    <a href="/book/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg><span>Book</span></a>
+    <a href="tel:7143059263" class="rc-tab-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><span>Call</span></a>
+  </nav>
+
+  <script src="/app/app.js?v=6" defer></script>
+</body>
+</html>

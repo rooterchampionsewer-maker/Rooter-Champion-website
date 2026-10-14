@@ -1,0 +1,65 @@
+{
+  "name": "Rooter Champion: Drain Help & Booking",
+  "short_name": "Rooter Champ",
+  "id": "/help/",
+  "description": "Figure out what's wrong with your drain, get safe tips, and book Rooter Champion. Family-owned, serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities.",
+  "start_url": "/help/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A1628",
+  "theme_color": "#0A1628",
+  "lang": "en-US",
+  "categories": [
+    "lifestyle",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "/app/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/app/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Check my problem",
+      "url": "/help/check/?source=pwa",
+      "icons": [
+        {
+          "src": "/app/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Book online",
+      "url": "/book/?source=pwa",
+      "icons": [
+        {
+          "src": "/app/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

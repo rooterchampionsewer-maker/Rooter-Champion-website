@@ -98,42 +98,6 @@
       });
     }
 
-    // Quick Quote side tab
-    const quotePanel = document.getElementById('quote-panel');
-    const quoteBtn   = document.getElementById('quote-tab-btn');
-    let quoteManual  = false; // true once the user has manually toggled
-
-    function openQuote() {
-      quotePanel.style.maxWidth = '340px';
-      quotePanel.dataset.open   = 'true';
-      quoteBtn.style.background = 'rgba(255,255,255,0.08)';
-    }
-    function closeQuote() {
-      quotePanel.style.maxWidth = '0';
-      quotePanel.dataset.open   = 'false';
-      quoteBtn.style.background = 'rgba(255,255,255,0.08)';
-    }
-    function toggleQuote() {
-      quoteManual = true;
-      quotePanel.dataset.open === 'true' ? closeQuote() : openQuote();
-    }
-    function submitQuote() {
-      quoteManual = true;
-      closeQuote();
-    }
-
-    // Auto-open after 1s, auto-close when user scrolls — only if the quote exists on this page
-    if (quotePanel && quoteBtn) {
-      setTimeout(openQuote, 1000);
-      let autoRetracted = false;
-      window.addEventListener('scroll', function() {
-        if (!autoRetracted && !quoteManual && quotePanel.dataset.open === 'true' && window.scrollY > 80) {
-          closeQuote();
-          autoRetracted = true;
-        }
-      }, { passive: true });
-    }
-
     const dz = document.getElementById('drop-zone');
     if (dz) {
       dz.addEventListener('dragover', e => { e.preventDefault(); dz.style.borderColor = '#53A6DC'; });
