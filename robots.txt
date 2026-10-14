@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /booked/
+Disallow: /offline/
 
 Sitemap: https://rooterchampion.net/sitemap.xml
+Sitemap: https://rooterchampion.net/app/sitemap-app.xml

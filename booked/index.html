@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPGTXCPJVT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-SPGTXCPJVT");
+    // Google Ads tag — captures the gclid so calls attribute to the ad that drove them
+    gtag("config", "AW-439799376");
+    // Google Ads call conversion: swap in the tracked forwarding number.
+    // Handled manually via callback so icon/"Call Now" buttons (no visible number)
+    // get their tel: href swapped too — Google's default swap skips those.
+    gtag("config", "AW-439799376/4Dq4CNv2keAcENCc29EB", {
+      "phone_conversion_number": "714-305-9263",
+      "phone_conversion_callback": function (formatted_number, mobile_number) {
+        var swap = function () {
+          document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+            if (mobile_number) {
+              el.setAttribute("href", "tel:" + mobile_number);
+            }
+            if (!formatted_number) { return; }
+            // Walk text nodes so inner markup (icons, spans) survives the swap
+            var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+            var node;
+            while ((node = walker.nextNode())) {
+              if (node.nodeValue.indexOf("714-305-9263") !== -1) {
+                node.nodeValue = node.nodeValue.split("714-305-9263").join(formatted_number);
+              }
+            }
+          });
+        };
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", swap);
+        } else {
+          swap();
+        }
+      }
+    });
+    // Track phone-number clicks as a conversion-ready event
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          gtag("event", "phone_call_click", { event_category: "engagement", event_label: el.getAttribute("href") });
+        });
+      });
+    });
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="/app/img/favicon-64.png">
+  <title>Booking Confirmed | Rooter Champion</title>
+  <meta name="description" content="Thanks for booking with Rooter Champion. Your confirmation is on its way by email.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rooter Champion">
+  <meta property="og:title" content="Booking Confirmed | Rooter Champion">
+  <meta property="og:description" content="Thanks for booking with Rooter Champion. Your confirmation is on its way by email.">
+  <meta property="og:url" content="https://rooterchampion.net/booked/">
+  <meta property="og:image" content="https://rooterchampion.net/app/img/og-1200x630.jpg">
+  <meta name="theme-color" content="#0A1628">
+  <link rel="manifest" href="/app/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/app/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Rooter Champ">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&amp;family=DM+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { 'rc-black':'#010000','rc-night':'#0A1628','rc-ink':'#0A1220','rc-navy':'#274A6A','rc-blue':'#53A6DC','rc-green':'#81B752','rc-light':'#EFF0F1' },
+        fontFamily: { heading:['"Barlow Condensed"','"Arial Narrow"','Arial','sans-serif'], body:['"DM Sans"','Arial','sans-serif'] }
+      } }
+    }
+  </script>
+  <link rel="stylesheet" href="/app/app.css?v=5">
+  <script type="speculationrules">{"prefetch":[{"where":{"or":[{"href_matches":"/help/*"},{"href_matches":"/book/"}]},"eagerness":"moderate"}]}</script>
+</head>
+<body class="bg-white text-[#0A1220] font-body rc-pad ">
+
+  <!-- ===== HEADER (matches rooterchampion.net) ===== -->
+  <header class="rc-header bg-[#0A1628] border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 sm:h-20">
+      <a href="/" class="flex items-center gap-3 sm:gap-4 min-w-0" aria-label="Rooter Champion home">
+        <img src="/app/img/logo.webp" alt="Rooter Champion" class="h-9 sm:h-12 w-auto" width="167" height="48">
+        <span class="font-heading font-bold uppercase tracking-wider text-[12px] sm:text-sm text-white/80 leading-tight border-l border-white/25 pl-3 sm:pl-4">Sewer &amp; Drain<br class="sm:hidden"><span class="hidden sm:inline"> &middot; </span>Experts</span>
+      </a>
+      <nav class="flex items-center gap-5 lg:gap-7" aria-label="Main">
+        <div class="hidden md:flex items-center gap-5 lg:gap-7"><a href="/help/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px]">Drain Help</a><a href="/help/check/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px]">Check My Problem</a><a href="/book/" class="text-white/85 hover:text-white font-heading font-bold uppercase tracking-wider text-[15px]">Book Online</a></div>
+        <a href="tel:7143059263" class="btn-call text-sm sm:text-base px-4 sm:px-5 py-2.5">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <span class="hidden sm:inline">714-305-9263</span><span class="sm:hidden">Call</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="max-w-2xl mx-auto px-5 sm:px-6 py-14 text-center">
+    <div class="w-20 h-20 rounded-full bg-[#81B752] mx-auto flex items-center justify-center text-[#0A1220]"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg></div>
+    <h1 class="font-heading font-extrabold text-3xl sm:text-4xl mt-6">You&rsquo;re booked. Thank you!</h1>
+    <p class="text-lg text-[#0A1220]/75 mt-4">We just emailed your confirmation with the date, arrival time and details. If anything changes, call us at <a href="tel:7143059263" class="font-bold underline">714-305-9263</a>.</p>
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center"><a href="/help/" class="btn-dark text-lg px-6 py-4">Back to drain help</a><a href="tel:7143059263" class="btn-call text-lg px-6 py-4">Call 714-305-9263</a></div>
+  </main>
+  <script>
+    // Booking-complete tracking. Jobber's form confirmation should redirect here: https://rooterchampion.net/booked/
+    (function () {
+      if (typeof gtag === "function") { gtag("event", "online_booking_complete", { event_category: "booking" }); }
+      // ===== GOOGLE ADS CONVERSION PLACEHOLDER (intentionally disabled) =====
+      // 1) In Google Ads: Goals > Conversions > New conversion action > Website > "Online booking".
+      // 2) Copy its send_to value (AW-439799376/XXXXXXXXXXXX) and replace REPLACE_WITH_BOOKING_LABEL below.
+      // 3) Uncomment the line. No conversion ID/label has been created or invented yet.
+      // if (typeof gtag === "function") { gtag("event", "conversion", { send_to: "AW-439799376/REPLACE_WITH_BOOKING_LABEL" }); }
+      // If this page loads inside the in-page booking sheet, tell the parent page so it can close the sheet.
+      if (window.parent !== window) { try { window.parent.postMessage({ rc: "booked" }, location.origin); } catch (e) {} }
+    })();
+  </script>
+
+  <!-- ===== FOOTER (matches rooterchampion.net) ===== -->
+  <footer class="bg-[#0A1628] text-white/60 text-sm py-10 pb-28 sm:pb-10 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-6 grid gap-8 sm:grid-cols-[auto_1fr_1fr]">
+      <div><a href="/"><img src="/app/img/logo.webp" alt="Rooter Champion" class="h-10 w-auto" width="139" height="40" loading="lazy"></a>
+        <p class="mt-3 max-w-xs">Family-owned sewer &amp; drain experts based in La Habra.</p></div>
+      <div class="leading-relaxed">
+        <p class="font-heading font-bold uppercase tracking-wider text-white/85 mb-2">Drain help</p>
+        <p><a href="/help/" class="hover:underline">Drain help guides</a><br><a href="/help/check/" class="hover:underline">Check my problem</a><br><a href="/book/" class="hover:underline">Book online</a><br><a href="/" class="hover:underline">rooterchampion.net home</a> &middot; <a href="/service-areas.html" class="hover:underline">Service areas</a> &middot; <a href="/privacy.html" class="hover:underline">Privacy</a></p>
+      </div>
+      <div class="leading-relaxed">
+        <p class="font-heading font-bold uppercase tracking-wider text-white/85 mb-2">Rooter Champion</p>
+        <p><a href="tel:7143059263" class="text-white font-semibold hover:underline focus-visible:underline">714-305-9263</a> &middot; Open 7 days, 8am&ndash;5pm &middot; We respond within 1 hour</p>
+        <p>1401 S Beach Blvd Unit A, La Habra, CA 90631</p>
+        <p>Serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities</p>
+        <p>Family-owned &middot; Licensed &amp; insured &middot; CA Lic. #1063585</p>
+        <p class="text-white/40 mt-1">&copy; 2026 Rooter Champion</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== APP TAB BAR (mobile) ===== -->
+  <nav class="rc-tabs" aria-label="App">
+    <a href="/help/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-1 .6-1.5 1.2-1.5 2.2M12 17v.5"/></svg><span>Help</span></a>
+    <a href="/help/check/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5M8 16l1.5 1.5L12 15"/></svg><span>Check</span></a>
+    <a href="/book/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2.5 2.5 4.5-5"/></svg><span>Book</span></a>
+    <a href="tel:7143059263" class="rc-tab-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><span>Call</span></a>
+  </nav>
+
+  <script src="/app/app.js?v=6" defer></script>
+</body>
+</html>
