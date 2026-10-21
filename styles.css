@@ -536,3 +536,9 @@
         justify-content: center;
       }
     }
+
+/* ── Internal-link styles (city links + service cards) ── */
+.rc-areas a{color:#53A6DC;font-weight:600;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
+.rc-areas a:hover{color:#81B752}
+.svc-card{display:block;background:rgba(39,74,106,0.18);border:1px solid rgba(39,74,106,0.6);border-radius:12px;padding:20px;transition:border-color .2s}
+.svc-card:hover{border-color:#81B752}
