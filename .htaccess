@@ -10,8 +10,12 @@ RewriteRule ^(.*)$ https://rooterchampion.net/$1 [R=301,L]
 
 # 2) Old-site pages that no longer exist -> closest current page
 #    (trailing slash optional, case-insensitive)
-RewriteRule ^(tustin|hacienda-heights|west-covina|whittier|santa-ana|la-mirada|orange|orange-county|norwalk|rowland-heights)/?$ /service-areas.html [R=301,L,NC]
-RewriteRule ^(hydro-jetting|descaling)/?$ /drain-cleaning.html [R=301,L,NC]
+# Old city URLs that now have their own page
+RewriteRule ^(whittier|la-mirada|norwalk|hacienda-heights|rowland-heights)/?$ /$1.html [R=301,L,NC]
+# Old city URLs with no page of their own -> Service Areas
+RewriteRule ^(tustin|west-covina|santa-ana|orange|orange-county)/?$ /service-areas.html [R=301,L,NC]
+RewriteRule ^hydro-jetting/?$ /hydro-jetting.html [R=301,L,NC]
+RewriteRule ^descaling(\.html)?/?$ /sewer-robotics.html [R=301,L,NC]
 
 # 3) Extensionless URL (with or without trailing slash) -> .html when that page exists
 #    /anaheim  or  /anaheim/  -> /anaheim.html
