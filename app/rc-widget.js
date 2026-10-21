@@ -162,7 +162,7 @@ function rcChecker(root, o) {
     '<div class="ov" hidden></div>' +
     '<div class="pn" role="dialog" aria-modal="true" aria-label="Rooter Champion help and booking" hidden>' +
       '<div class="grab" aria-hidden="true"></div>' +
-      '<div class="hd"><div class="ht"><img class="lgi" src="/app/rc-logo.png" alt="Rooter Champion" width="463" height="133"><span>Family-owned</span><span>Open 7 days, 8am&ndash;5pm</span></div><button type="button" class="x" aria-label="Close">&times;</button></div>' +
+      '<div class="hd"><div class="ht"><img class="lgi" src="/app/rc-logo.png" alt="Rooter Champion" width="463" height="133"><span>Family-owned</span><span>Mon&ndash;Fri 8am&ndash;10pm &middot; Sat&ndash;Sun 8am&ndash;5pm</span></div><button type="button" class="x" aria-label="Close">&times;</button></div>' +
       '<div class="tabs" role="tablist"><button role="tab" data-tab="check">Check my problem</button><button role="tab" data-tab="book">Book</button><button role="tab" data-tab="call">Call</button></div>' +
       '<div class="bd"></div>' +
       '<div class="ft">CA Lic. #1063585 &middot; <a href="' + BASE + '/help/">All drain guides</a></div>' +
@@ -188,7 +188,7 @@ function rcChecker(root, o) {
       h += '<p class="urg"><b>Sewage coming up?</b> Don&rsquo;t book online. Stop using water and call <a href="' + tel() + '" data-call>' + fmt(tel()) + "</a> now.</p>";
       bd.innerHTML = h;
     } else {
-      bd.innerHTML = '<div class="cl"><p class="lead">Talk to our team about your drain or sewer problem.</p><a class="rcx-btn rcx-btn-call rcx-btn-big" href="' + tel() + '" data-call>' + ICON.phone + " Call " + fmt(tel()) + '</a><p class="sm">For urgent problems like sewage coming up, call now and stop using water.</p><p class="sm">Open 7 days, 8am&ndash;5pm. We respond within 1 hour.</p><p class="sm">1401 S Beach Blvd Unit A, La Habra, CA 90631<br>Serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities.</p></div>';
+      bd.innerHTML = '<div class="cl"><p class="lead">Talk to our team about your drain or sewer problem.</p><a class="rcx-btn rcx-btn-call rcx-btn-big" href="' + tel() + '" data-call>' + ICON.phone + " Call " + fmt(tel()) + '</a><p class="sm">For urgent problems like sewage coming up, call now and stop using water.</p><p class="sm">Mon&ndash;Fri 8am&ndash;10pm, Sat&ndash;Sun 8am&ndash;5pm. We respond within 1 hour.</p><p class="sm">1401 S Beach Blvd Unit A, La Habra, CA 90631<br>Serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities.</p></div>';
     }
     bd.scrollTop = 0;
   }
