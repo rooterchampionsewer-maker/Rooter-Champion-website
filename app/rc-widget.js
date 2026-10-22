@@ -150,12 +150,33 @@ function rcChecker(root, o) {
     for (var i = 0; i < links.length; i++) { if (!host.contains(links[i])) return links[i].getAttribute("href"); }
     return "tel:" + PHONE.replace(/\D/g, "");
   }
+  // Google Ads swaps the page's tel: links to its tracked forwarding number, sometimes
+  // after this widget has rendered. Re-read the live number the moment a call link is
+  // clicked so widget calls are credited as call conversions too.
+  function freshenCallLink(a) {
+    if (!a) return;
+    var live = tel(), old = a.getAttribute("href");
+    if (!live || live === old) return;
+    a.setAttribute("href", live);
+    var oldNum = (old || "").replace(/^tel:/, ""), liveNum = live.replace(/^tel:/, "");
+    var walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT, null, false), n;
+    while ((n = walker.nextNode())) {
+      if (n.nodeValue.replace(/\D/g, "").indexOf(oldNum.replace(/\D/g, "")) !== -1) {
+        n.nodeValue = n.nodeValue.replace(/[0-9().\-\s]{7,}/, fmt("tel:" + liveNum));
+      }
+    }
+  }
   function fmt(h) { var d = h.replace(/\D/g, "").slice(-10); return d.length === 10 ? d.slice(0, 3) + "-" + d.slice(3, 6) + "-" + d.slice(6) : PHONE; }
   function ph(u) { return !u || /^JOBBER_LINK_/.test(u); }
 
   var host = document.createElement("div");
   host.id = "rc-widget"; host.style.cssText = "all:initial;position:fixed;z-index:" + Z + ";" + SIDE + ":0;bottom:0;";
   var root = host.attachShadow ? host.attachShadow({ mode: "open" }) : host;
+  root.addEventListener("click", function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+    if (a) freshenCallLink(a);
+  }, true);
+
   root.innerHTML = "<style>" + CSS.replace(/__SIDE__/g, SIDE).replace(/__B__/g, BOTTOM + "px").replace(/__BM__/g, BOTTOM_M + "px") + "</style>" +
     '<button type="button" class="fab" aria-haspopup="dialog" aria-expanded="false"><img class="fab-b" src="' + BASE + '/app/rc-55.png" alt="" width="50" height="50"><span class="fab-i">' + ICON.chat + '</span><span class="fab-t">' + LABEL + "</span></button>" +
     '<div class="tz" role="dialog" aria-label="$55 drain cleaning special" hidden><div class="tz-h"><button type="button" class="tz-x" aria-label="Close">&times;</button><img src="' + BASE + '/app/rc-55.png" alt="$55 Drain Cleaning with camera inspection" width="112" height="112"><div class="tz-t"><b>$55</b> Drain Cleaning</div><div class="tz-s">Camera inspection included</div></div><div class="tz-line"></div><div class="tz-a"><button type="button" class="tz-bk">Book now</button><a class="tz-cl" href="tel:7143059263">' + ICON.phone + ' Call</a></div></div>' +
