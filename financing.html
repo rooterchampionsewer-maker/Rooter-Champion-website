@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPGTXCPJVT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-SPGTXCPJVT");
+    // Google Ads tag — captures the gclid so calls attribute to the ad that drove them
+    gtag("config", "AW-439799376");
+    // Google Ads call conversion: swap in the tracked forwarding number.
+    // Handled manually via callback so icon/"Call Now" buttons (no visible number)
+    // get their tel: href swapped too — Google's default swap skips those.
+    gtag("config", "AW-439799376/4Dq4CNv2keAcENCc29EB", {
+      "phone_conversion_number": "714-305-9263",
+      "phone_conversion_callback": function (formatted_number, mobile_number) {
+        var swap = function () {
+          document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+            if (mobile_number) {
+              el.setAttribute("href", "tel:" + mobile_number);
+            }
+            if (!formatted_number) { return; }
+            // Walk text nodes so inner markup (icons, spans) survives the swap
+            var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+            var node;
+            while ((node = walker.nextNode())) {
+              if (node.nodeValue.indexOf("714-305-9263") !== -1) {
+                node.nodeValue = node.nodeValue.split("714-305-9263").join(formatted_number);
+              }
+            }
+          });
+        };
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", swap);
+        } else {
+          swap();
+        }
+      }
+    });
+    // Track phone-number clicks as a conversion-ready event
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll("a[href^=\"tel:\"]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          gtag("event", "phone_call_click", { event_category: "engagement", event_label: el.getAttribute("href") });
+        });
+      });
+    });
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="brand_assets/bryan.png">
+  <title>Plumbing &amp; Sewer Financing, 18 Months No Interest* | Rooter Champion</title>
+  <link rel="canonical" href="https://rooterchampion.net/financing.html">
+  <meta name="description" content="Finance sewer line repair, trenchless lining, hydro jetting and water heaters with Synchrony Bank: no interest if paid in full within 18 months*. Subject to credit approval. Call 714-305-9263.">
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rooter Champion">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://rooterchampion.net/financing.html">
+  <meta property="og:title" content="Plumbing &amp; Sewer Financing, 18 Months No Interest* | Rooter Champion">
+  <meta property="og:description" content="Finance sewer line repair, trenchless lining, hydro jetting and water heaters with Synchrony Bank: no interest if paid in full within 18 months*. Subject to credit approval. Call 714-305-9263.">
+  <meta property="og:image" content="https://rooterchampion.net/brand_assets/RooterVanNoBG.png">
+  <meta property="og:image:alt" content="Rooter Champion drain and sewer service">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plumbing &amp; Sewer Financing, 18 Months No Interest* | Rooter Champion">
+  <meta name="twitter:description" content="Finance sewer line repair, trenchless lining, hydro jetting and water heaters with Synchrony Bank: no interest if paid in full within 18 months*. Subject to credit approval. Call 714-305-9263.">
+  <meta name="twitter:image" content="https://rooterchampion.net/brand_assets/RooterVanNoBG.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Plumber",
+  "name": "Rooter Champion Drain Cleaning & Hydro Jetting, Inc.",
+  "alternateName": "Rooter Champion",
+  "url": "https://rooterchampion.net/financing.html",
+  "logo": "https://rooterchampion.net/brand_assets/MainLogo.png",
+  "image": "https://rooterchampion.net/brand_assets/RooterVanNoBG.png",
+  "telephone": "+1-714-305-9263",
+  "description": "Plumbing, drain and sewer services with financing available through Synchrony Bank, subject to credit approval. Family-owned. CA Contractor License #1063585.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1401 S Beach Blvd Unit A",
+    "addressLocality": "La Habra",
+    "addressRegion": "CA",
+    "postalCode": "90631",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "La Habra, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Fullerton, CA"
+    },
+    {
+      "@type": "City",
+      "name": "La Mirada, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Whittier, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Brea, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Placentia, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Anaheim, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Buena Park, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Santa Fe Springs, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Hacienda Heights, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Norwalk, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Rowland Heights, CA"
+    },
+    {
+      "@type": "City",
+      "name": "Downey, CA"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/rooterchampion/",
+    "https://www.yelp.com/biz/rooter-champion-drain-cleaning-and-hydro-jetting-la-habra-5"
+  ]
+}
+</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'rc-black': '#010000',
+            'rc-gray': '#5F5F5F',
+            'rc-navy': '#274A6A',
+            'rc-blue': '#53A6DC',
+            'rc-green': '#81B752',
+            'rc-lightblue': '#B2D1E6',
+            'rc-light': '#EFF0F1',
+          },
+          fontFamily: {
+            heading: ['Barlow Condensed', 'sans-serif'],
+            body: ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <style>
+    nav#main-nav { box-shadow: none !important; }
+    .contact-input{width:100%;background:rgba(10,18,32,0.6);border:1px solid rgba(83,166,220,0.25);border-radius:.5rem;padding:.875rem 1rem;color:#EFF0F1;font-family:'DM Sans',sans-serif;font-size:.95rem;transition:border-color .2s,background .2s}
+    .contact-input:focus{outline:none;border-color:rgba(83,166,220,0.6);background:rgba(10,18,32,0.9)}
+    .contact-input::placeholder{color:rgba(239,240,241,0.35)}
+    .contact-label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(178,209,230,0.8);margin-bottom:.5rem}
+    .fin-badge{filter:drop-shadow(0 8px 24px rgba(129,183,82,0.35))}
+    .step-num{width:52px;height:52px;border-radius:9999px;display:flex;align-items:center;justify-content:center;background:rgba(129,183,82,0.15);border:1px solid rgba(129,183,82,0.45);color:#81B752;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem}
+    .cover-card{border-radius:1rem;overflow:hidden;background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2);display:block;transition:border-color .2s}
+    .cover-card:hover{border-color:#81B752}
+    .cover-card img{width:100%;height:170px;object-fit:cover;display:block}
+  </style>
+</head>
+<body class="bg-[#0A1628] text-white overflow-x-hidden relative min-h-screen">
+
+  <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0A1628] via-[#0F1E36] to-[#274A6A] opacity-100"></div>
+    <div class="absolute bottom-0 right-0 w-3/4 h-3/4 bg-[#274A6A] origin-bottom-right rotate-12 translate-y-1/3 -translate-x-1/4 opacity-70"></div>
+    <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#1A3550] opacity-80"></div>
+    <div class="absolute top-0 left-0 w-1/2 h-full bg-[#53A6DC] -skew-y-6 origin-top-left -translate-y-1/4 opacity-[0.08]"></div>
+    <div class="absolute top-1/3 right-0 w-1/3 h-1/2 bg-[#53A6DC] skew-y-12 opacity-[0.06]"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50" style="background:linear-gradient(to bottom, rgba(10,18,32,0.7) 0%, rgba(10,18,32,0.25) 55%, rgba(10,18,32,0) 100%);border-bottom:1px solid transparent;transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.3s ease,backdrop-filter 0.3s ease,transform 1.5s cubic-bezier(0.25,0.1,0.25,1),opacity 1.5s ease">
+    <div class="px-4 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between pt-1 md:pt-0" style="height:clamp(58px,6.4vw,96px)">
+        <a href="index.html" class="group flex items-center"><img src="brand_assets/MainLogo.png" alt="Rooter Champion" class="w-auto mt-1 md:mt-0 transition-transform duration-300 ease-out group-hover:scale-105" style="height:clamp(42px,5.2vw,76px)"></a>
+        <ul id="nav-menu" class="hidden lg:flex relative items-center p-1 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+          <!-- Sliding green pill (follows hovered item) -->
+          <li id="nav-pill" aria-hidden="true"></li>
+
+          <li class="nav-tab relative z-10">
+            <a href="index.html" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">Home</a>
+          </li>
+          <li class="nav-tab relative z-10">
+            <a href="about.html" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">About Us</a>
+          </li>
+          <li class="nav-tab nav-dropdown relative z-10">
+            <a href="#" class="flex items-center gap-1 px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">
+              Services
+              <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="general-plumbing.html">General Plumbing</a>
+              <a href="camera-inspections.html">Camera Inspections</a>
+              <a href="drain-cleaning.html">Drain Cleaning</a>
+              <a href="hydro-jetting.html">Hydro Jetting</a>
+              <a href="trenchless.html">Trenchless Sewer Repair</a>
+              <a href="sewer-robotics.html">Sewer Robotics</a>
+              <a href="drain-installation.html">Drain Installation</a>
+            </div>
+          </li>
+          <li class="nav-tab relative z-10">
+            <a href="service-areas.html" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">Service Areas</a>
+          </li>
+          <li class="nav-tab relative z-10">
+            <a href="contact.html" class="block px-4 py-1.5 leading-none font-heading font-semibold tracking-widest uppercase text-white transition-colors duration-200 whitespace-nowrap">Contact Us</a>
+          </li>
+        </ul>
+          <div class="flex items-center lg:hidden">
+            <button id="mobile-menu-btn" class="flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Menu" aria-expanded="false">
+              <span class="w-6 h-0.5 bg-[#81B752] rounded-full"></span>
+              <span class="w-6 h-0.5 bg-[#81B752] rounded-full"></span>
+              <span class="w-6 h-0.5 bg-[#81B752] rounded-full"></span>
+            </button>
+          </div>
+        <!-- Phone — glass pill matching the menu capsule -->
+        <div class="hidden lg:flex items-center">
+          <a href="tel:7143059263" aria-label="Call 714-305-9263" class="nav-phone group inline-flex items-center gap-2.5 px-5 py-2 leading-none font-heading font-bold tracking-wide text-white whitespace-nowrap transition-[transform,background,border-color] duration-300 ease-out hover:scale-105">
+            <svg class="w-5 h-5 flex-shrink-0 text-[#81B752] group-hover:text-white transition-colors duration-200" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            714-305-9263
+          </a>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" data-open="false" class="lg:hidden px-4 pb-4">
+        <a href="index.html" class="mobile-menu-link">Home</a>
+        <a href="about.html" class="mobile-menu-link">About Us</a>
+        <div class="mobile-menu-link">Services</div>
+        <a href="general-plumbing.html" class="mobile-menu-sub">General Plumbing</a>
+        <a href="camera-inspections.html" class="mobile-menu-sub">Camera Inspections</a>
+        <a href="drain-cleaning.html" class="mobile-menu-sub">Drain Cleaning</a>
+        <a href="hydro-jetting.html" class="mobile-menu-sub">Hydro Jetting</a>
+        <a href="trenchless.html" class="mobile-menu-sub">Trenchless Sewer Repair</a>
+        <a href="sewer-robotics.html" class="mobile-menu-sub">Sewer Robotics</a>
+        <a href="drain-installation.html" class="mobile-menu-sub">Drain Installation</a>
+        <a href="service-areas.html" class="mobile-menu-link">Service Areas</a>
+        <a href="contact.html" class="mobile-menu-link">Contact Us</a>
+        <div class="flex gap-3 pt-4">
+          <a href="tel:7143059263" class="flex-1 text-center bg-[#81B752] hover:bg-[#81B752]/80 text-white font-heading font-bold text-xs tracking-widest uppercase px-4 py-3 rounded transition-all duration-200">Call Now</a>
+          <a href="contact.html" class="flex-1 text-center bg-[#53A6DC] hover:bg-[#53A6DC]/80 text-white font-heading font-bold text-xs tracking-widest uppercase px-4 py-3 rounded transition-all duration-200">Get Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT — single card wrapping everything -->
+  <div class="relative z-10 mx-0 mt-0 mb-0 rounded-none overflow-hidden">
+
+
+  <!-- HERO -->
+  <section class="bg-[#0A1220] relative overflow-hidden pt-28 pb-20 lg:pb-28 min-h-[80svh] lg:min-h-[70vh] flex items-stretch lg:items-start">
+    <div class="absolute inset-0 hero-grid pointer-events-none" style="opacity:0.18"></div>
+    <div class="w-full max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="text-[#81B752] font-heading font-semibold text-xs tracking-widest uppercase mb-3">Financing Available &middot; Through Synchrony Bank</div>
+      <h1 class="font-heading font-black text-white mb-5" style="font-size:clamp(2.75rem,6.5vw,5rem);letter-spacing:-0.02em;line-height:1.05">FIX IT NOW,<br><span class="text-[#53A6DC]">PAY OVER TIME</span></h1>
+      <div class="fin-badge inline-flex flex-col items-center rounded-2xl px-7 py-4 mb-6" style="background:rgba(129,183,82,0.12);border:2px solid rgba(129,183,82,0.55)">
+        <span class="font-heading font-black text-[#81B752] leading-none" style="font-size:clamp(2.6rem,6vw,4rem)">18 MONTHS</span>
+        <span class="font-heading font-bold text-white tracking-widest uppercase text-sm lg:text-base mt-1">No interest if paid in full*</span>
+      </div>
+      <p class="font-body text-[#EFF0F1]/70 text-base lg:text-xl max-w-3xl mx-auto mb-6 lg:mb-8" style="line-height:1.7">Sewer line failed? Water heater out? Don&rsquo;t put off the repair. Qualifying jobs can be financed through Synchrony Bank with no interest if paid in full within 18 months*. Serving La Habra, Fullerton, La Mirada, Whittier and surrounding cities.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="tel:7143059263" class="inline-flex items-center justify-center gap-2 bg-[#81B752] hover:bg-[#81B752]/80 text-white font-heading font-bold text-sm tracking-widest uppercase px-6 py-3.5 rounded-lg shadow-[0_4px_20px_rgba(129,183,82,0.4)]"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Call 714-305-9263</a>
+        <a href="https://www.synchrony.com/mmc/S6213129300?sitecode=acewel401" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 border-2 border-[#53A6DC]/50 hover:bg-[#53A6DC]/10 text-[#53A6DC] font-heading font-bold text-sm tracking-widest uppercase px-6 py-3.5 rounded-lg">Apply Now</a>
+      </div>
+      <p class="font-body text-[#EFF0F1]/45 text-xs mt-5">*Subject to credit approval through Synchrony Bank.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IT COVERS -->
+  <section class="bg-[#010000] py-12 lg:py-20 site-grid-dark relative overflow-hidden"><div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-10 lg:mb-14"><div class="text-[#81B752] font-heading font-semibold text-xs tracking-widest uppercase mb-3">What You Can Finance</div><h2 class="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-white tracking-tight" style="letter-spacing:-0.02em">BIG REPAIRS, <span class="text-[#53A6DC]">SMALL PAYMENTS</span></h2>
+    <p class="font-body text-[#EFF0F1]/65 text-base lg:text-lg max-w-2xl mx-auto mt-4" style="line-height:1.7">Use financing for qualifying jobs, including:</p></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="trenchless.html" class="cover-card"><img src="brand_assets/ResizedPermaliner.jpg" alt="Sewer line repair and replacement" loading="lazy"><div class="p-5"><h3 class="font-heading font-bold text-xl text-white mb-1">Sewer line repair &amp; replacement <span class="text-[#81B752]">&rarr;</span></h3><p class="font-body text-[#EFF0F1]/65 text-sm" style="line-height:1.6">Trenchless pipe lining and pipe bursting that fix your sewer without tearing up your yard.</p></div></a><a href="drain-installation.html" class="cover-card"><img src="brand_assets/installpipe.jpg" alt="Drain and sewer installation" loading="lazy"><div class="p-5"><h3 class="font-heading font-bold text-xl text-white mb-1">Drain &amp; sewer installation <span class="text-[#81B752]">&rarr;</span></h3><p class="font-body text-[#EFF0F1]/65 text-sm" style="line-height:1.6">New drain and sewer lines installed to code for remodels, redrains and replacements.</p></div></a><a href="hydro-jetting.html" class="cover-card"><img src="brand_assets/HydroDS.jpg" alt="Hydro jetting" loading="lazy"><div class="p-5"><h3 class="font-heading font-bold text-xl text-white mb-1">Hydro jetting <span class="text-[#81B752]">&rarr;</span></h3><p class="font-body text-[#EFF0F1]/65 text-sm" style="line-height:1.6">High-pressure water clears grease, scale, sludge and roots from the full pipe wall.</p></div></a><a href="sewer-robotics.html" class="cover-card"><img src="brand_assets/DESCALEDS.jpg" alt="Sewer robotics and descaling" loading="lazy"><div class="p-5"><h3 class="font-heading font-bold text-xl text-white mb-1">Sewer robotics &amp; descaling <span class="text-[#81B752]">&rarr;</span></h3><p class="font-body text-[#EFF0F1]/65 text-sm" style="line-height:1.6">Robotic cutters remove roots and scale and prep old pipes for lining.</p></div></a><a href="general-plumbing.html" class="cover-card"><img src="brand_assets/WaterHeater-1.jpg" alt="Water heaters" loading="lazy"><div class="p-5"><h3 class="font-heading font-bold text-xl text-white mb-1">Water heaters <span class="text-[#81B752]">&rarr;</span></h3><p class="font-body text-[#EFF0F1]/65 text-sm" style="line-height:1.6">Repair, installation and replacement for tank and tankless water heaters.</p></div></a><a href="general-plumbing.html" class="cover-card"><img src="brand_assets/gaslineds.jpg" alt="Gas lines and general plumbing" loading="lazy"><div class="p-5"><h3 class="font-heading font-bold text-xl text-white mb-1">Gas lines &amp; general plumbing <span class="text-[#81B752]">&rarr;</span></h3><p class="font-body text-[#EFF0F1]/65 text-sm" style="line-height:1.6">Gas line installation, leaks and everyday plumbing repairs.</p></div></a></div>
+  </div></section>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-[#0A1220] py-12 lg:py-20 site-grid-dark relative overflow-hidden"><div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-10 lg:mb-14"><div class="text-[#81B752] font-heading font-semibold text-xs tracking-widest uppercase mb-3">How It Works</div><h2 class="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-white tracking-tight" style="letter-spacing:-0.02em">3 SIMPLE <span class="text-[#53A6DC]">STEPS</span></h2></div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5"><div class="rounded-2xl p-6 text-center" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)"><div class="step-num mx-auto mb-4">1</div><h3 class="font-heading font-bold text-xl text-white mb-2">Get your estimate</h3><p class="font-body text-[#EFF0F1]/65 text-sm lg:text-base" style="line-height:1.7">We inspect the problem, often with a sewer camera, and give you an upfront price before any work starts.</p></div><div class="rounded-2xl p-6 text-center" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)"><div class="step-num mx-auto mb-4">2</div><h3 class="font-heading font-bold text-xl text-white mb-2">Apply in minutes</h3><p class="font-body text-[#EFF0F1]/65 text-sm lg:text-base" style="line-height:1.7">Apply online or with our tech on site through Synchrony Bank. Approval is subject to credit review.</p></div><div class="rounded-2xl p-6 text-center" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)"><div class="step-num mx-auto mb-4">3</div><h3 class="font-heading font-bold text-xl text-white mb-2">Approve and we schedule</h3><p class="font-body text-[#EFF0F1]/65 text-sm lg:text-base" style="line-height:1.7">Once you&rsquo;re approved and okay the estimate, we schedule the job and get your plumbing fixed.</p></div></div>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center mt-10">
+      <a href="https://www.synchrony.com/mmc/S6213129300?sitecode=acewel401" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-[#81B752] hover:bg-[#81B752]/80 text-white font-heading font-bold text-sm tracking-widest uppercase px-6 py-3.5 rounded-lg shadow-[0_4px_20px_rgba(129,183,82,0.4)]">Apply Now</a>
+      <a href="contact.html" class="inline-flex items-center justify-center gap-2 border-2 border-[#53A6DC]/50 hover:bg-[#53A6DC]/10 text-[#53A6DC] font-heading font-bold text-sm tracking-widest uppercase px-6 py-3.5 rounded-lg">Get An Estimate</a>
+    </div>
+  </div></section>
+
+  <!-- FAQ -->
+  <section class="bg-[#010000] py-12 lg:py-20 site-grid-dark relative overflow-hidden"><div class="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-10 lg:mb-14"><div class="text-[#81B752] font-heading font-semibold text-xs tracking-widest uppercase mb-3">Financing FAQ</div><h2 class="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-white tracking-tight" style="letter-spacing:-0.02em">FINANCING <span class="text-[#53A6DC]">QUESTIONS</span></h2></div>
+    <div class="space-y-3"><details class="group rounded-2xl p-5 lg:p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)" open><summary class="font-heading font-bold text-white text-base lg:text-lg cursor-pointer list-none flex justify-between gap-4"><span>Who provides the financing?</span><span class="text-[#53A6DC]">+</span></summary><p class="font-body text-[#EFF0F1]/70 text-sm lg:text-base mt-4" style="line-height:1.7">Financing is provided by Synchrony Bank, not Rooter Champion. All applications are subject to credit approval by Synchrony Bank.</p></details><details class="group rounded-2xl p-5 lg:p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)" open><summary class="font-heading font-bold text-white text-base lg:text-lg cursor-pointer list-none flex justify-between gap-4"><span>Is it really no interest for 18 months?</span><span class="text-[#53A6DC]">+</span></summary><p class="font-body text-[#EFF0F1]/70 text-sm lg:text-base mt-4" style="line-height:1.7">No interest is charged on the promotional balance if you pay it off in full within 18 months. If you don&rsquo;t, interest is charged from the purchase date. Monthly payments are required during the promotion.</p></details><details class="group rounded-2xl p-5 lg:p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)"><summary class="font-heading font-bold text-white text-base lg:text-lg cursor-pointer list-none flex justify-between gap-4"><span>What work can I finance?</span><span class="text-[#53A6DC]">+</span></summary><p class="font-body text-[#EFF0F1]/70 text-sm lg:text-base mt-4" style="line-height:1.7">Qualifying jobs such as sewer line repair and replacement, trenchless lining, pipe bursting, hydro jetting, drain installation and water heaters. Ask us when you get your estimate.</p></details><details class="group rounded-2xl p-5 lg:p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)"><summary class="font-heading font-bold text-white text-base lg:text-lg cursor-pointer list-none flex justify-between gap-4"><span>How do I apply?</span><span class="text-[#53A6DC]">+</span></summary><p class="font-body text-[#EFF0F1]/70 text-sm lg:text-base mt-4" style="line-height:1.7">Tap &ldquo;Apply Now&rdquo; on this page or ask your technician on site. You&rsquo;ll get a decision from Synchrony Bank, and then we schedule your job.</p></details><details class="group rounded-2xl p-5 lg:p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)"><summary class="font-heading font-bold text-white text-base lg:text-lg cursor-pointer list-none flex justify-between gap-4"><span>Will I still get an upfront price?</span><span class="text-[#53A6DC]">+</span></summary><p class="font-body text-[#EFF0F1]/70 text-sm lg:text-base mt-4" style="line-height:1.7">Yes. We give you an upfront price before we start, so you know exactly what you&rsquo;re financing.</p></details><details class="group rounded-2xl p-5 lg:p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)"><summary class="font-heading font-bold text-white text-base lg:text-lg cursor-pointer list-none flex justify-between gap-4"><span>What are your hours?</span><span class="text-[#53A6DC]">+</span></summary><p class="font-body text-[#EFF0F1]/70 text-sm lg:text-base mt-4" style="line-height:1.7">We are open 7 days a week: Mon&ndash;Fri 8am&ndash;10pm, Sat&ndash;Sun 8am&ndash;5pm.</p></details></div>
+  </div></section>
+
+  <!-- CONTACT ABOUT FINANCING -->
+  <section id="financing-contact" class="bg-[#0A1220] py-12 lg:py-20 site-grid-dark relative overflow-hidden"><div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-10 lg:mb-14"><div class="text-[#81B752] font-heading font-semibold text-xs tracking-widest uppercase mb-3">Contact Us About Financing</div><h2 class="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-white tracking-tight" style="letter-spacing:-0.02em">QUESTIONS ABOUT FINANCING? <span class="text-[#53A6DC]">CONTACT US</span></h2>
+    <p class="font-body text-[#EFF0F1]/65 text-base lg:text-lg max-w-2xl mx-auto mt-4" style="line-height:1.7">Call us or send a quick message and we&rsquo;ll walk you through your options.</p></div>
+    <div class="grid lg:grid-cols-5 gap-8 lg:gap-10">
+      <form action="https://formspree.io/f/mkokzbgb" method="POST" class="lg:col-span-3 rounded-2xl p-6 lg:p-7 space-y-5" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.25)">
+        <input type="hidden" name="_subject" value="Financing Question — Rooter Champion">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div><label class="contact-label" for="fin-name">Full Name</label><input id="fin-name" type="text" name="name" required class="contact-input" placeholder="Your name"></div>
+          <div><label class="contact-label" for="fin-phone">Phone</label><input id="fin-phone" type="tel" name="phone" required class="contact-input" placeholder="(714) 555-0123"></div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div><label class="contact-label" for="fin-email">Email (optional)</label><input id="fin-email" type="email" name="email" class="contact-input" placeholder="you@email.com"></div>
+          <div><label class="contact-label" for="fin-service">Service Needed</label><select id="fin-service" name="service" class="contact-input" style="appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2353A6DC%22 stroke-width=%222%22><path d=%22M6 9l6 6 6-6%22/></svg>');background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem"><option>-- Select a service --</option><option>Sewer Line Repair / Replacement</option><option>Trenchless Lining</option><option>Pipe Bursting</option><option>Hydro Jetting</option><option>Sewer Robotics / Descale</option><option>Drain Installation / Redrain</option><option>Water Heater</option><option>General Plumbing</option><option>Other / Not Sure</option></select></div>
+        </div>
+        <div><label class="contact-label" for="fin-msg">Message</label><textarea id="fin-msg" name="message" rows="4" class="contact-input" placeholder="Tell us about the job and any questions about financing."></textarea></div>
+        <button type="submit" class="glass-btn w-full justify-center">Send Message <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></button>
+      </form>
+      <div class="lg:col-span-2 space-y-5">
+        <div class="rounded-2xl p-7" style="background:rgba(129,183,82,0.1);border:1px solid rgba(129,183,82,0.3)">
+          <div class="font-heading font-bold text-[#81B752] text-xs tracking-widest uppercase mb-3">Call Us</div>
+          <a href="tel:7143059263" class="font-heading font-black text-3xl text-white hover:text-[#81B752] transition-colors block mb-4">714-305-9263</a>
+          <a href="tel:7143059263" class="inline-flex items-center justify-center gap-2 bg-[#81B752] hover:bg-[#81B752]/80 text-white font-heading font-bold text-sm tracking-widest uppercase px-6 py-3.5 rounded-lg shadow-[0_4px_20px_rgba(129,183,82,0.4)] w-full"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg> Tap To Call</a>
+        </div>
+        <div class="rounded-2xl p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)">
+          <div class="font-heading font-bold text-[#81B752] text-xs tracking-widest uppercase mb-3">Hours</div>
+          <div class="space-y-2">
+            <div class="flex justify-between"><span class="font-body text-[#EFF0F1]/55 text-sm">Mon &ndash; Fri</span><span class="font-body text-white text-sm">8am &ndash; 10pm</span></div>
+            <div class="flex justify-between"><span class="font-body text-[#EFF0F1]/55 text-sm">Sat &ndash; Sun</span><span class="font-body text-white text-sm">8am &ndash; 5pm</span></div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-6" style="background:rgba(39,74,106,0.22);border:1px solid rgba(83,166,220,0.2)">
+          <div class="font-heading font-bold text-[#81B752] text-xs tracking-widest uppercase mb-3">Visit Our Shop</div>
+          <a href="https://maps.google.com/?q=1401+S+Beach+Blvd+Unit+A+La+Habra+CA+90631" target="_blank" rel="noopener" class="font-body text-white text-base hover:text-[#53A6DC] transition-colors" style="line-height:1.6">1401 S Beach Blvd Unit A<br>La Habra, CA 90631</a>
+          <p class="font-body text-[#EFF0F1]/45 text-xs mt-3">CA Lic. #1063585</p>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+
+<section class="relative overflow-hidden site-grid-dark py-12 lg:py-16" style="background:linear-gradient(180deg,#0A1220 0%,#0A1220 38%,#010000 100%);border-top:1px solid rgba(39,74,106,0.25)">
+   <div class="absolute inset-0 pointer-events-none">
+     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[320px] rounded-full blur-3xl" style="background:rgba(39,74,106,0.35)"></div>
+     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[420px] h-[140px] rounded-full blur-3xl" style="background:rgba(129,183,82,0.10)"></div>
+   </div>
+ <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+  <div class="rc-areas inline-block px-6 py-6">
+   <h4 class="font-heading font-black text-2xl md:text-3xl text-white tracking-tight mb-5 leading-tight">DRAIN CLEANING &amp; SEWER REPAIR<span class="text-[#81B752] block mt-1">NEAR YOU</span></h4>
+   <p class="font-body text-[#EFF0F1]/70 text-base lg:text-lg" style="line-height:2">
+    <a href="la-habra.html">La Habra</a> &middot; <a href="fullerton.html">Fullerton</a> &middot; <a href="la-mirada.html">La Mirada</a> &middot; <a href="whittier.html">Whittier</a> &middot; <a href="brea.html">Brea</a> &middot; <a href="placentia.html">Placentia</a> &middot; <a href="anaheim.html">Anaheim</a> &middot; <a href="buena-park.html">Buena Park</a> &middot; <a href="santa-fe-springs.html">Santa Fe Springs</a> &middot; <a href="hacienda-heights.html">Hacienda Heights</a> &middot; <a href="norwalk.html">Norwalk</a> &middot; <a href="rowland-heights.html">Rowland Heights</a> &middot; <a href="downey.html">Downey</a>
+   </p></div></div></section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#010000] pt-6 lg:pt-16 pb-24 lg:pb-8 site-grid-dark" style="border-top:1px solid rgba(39,74,106,0.4)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Mobile footer — compact centered layout -->
+      <div class="lg:hidden text-center mb-5">
+        <img src="brand_assets/MainLogo.png" alt="Rooter Champion" class="h-12 w-auto mx-auto mb-3">
+        <p class="font-body text-[#EFF0F1]/45 text-xs mb-3" style="line-height:1.6">Los Angeles &amp; Orange County's trusted sewer &amp; drain experts.</p>
+        <a href="https://maps.google.com/?q=1401+S+Beach+Blvd+La+Habra+CA+90631" target="_blank" rel="noopener" class="block font-body text-[#EFF0F1]/55 text-xs mb-3 hover:text-[#53A6DC] transition-colors" style="line-height:1.6">1401 S Beach Blvd<br>La Habra, CA 90631</a>
+        <a href="tel:7143059263" class="font-heading font-bold text-[#53A6DC] text-base tracking-wide">714-305-9263</a>
+        <p class="rc-areas font-body text-[#EFF0F1]/45 text-xs mt-3"><a href="financing.html">Big job? We offer financing &rarr;</a></p>
+      </div>
+      <div class="lg:hidden grid grid-cols-2 gap-5 mb-5 max-w-xs mx-auto text-center">
+        <div>
+          <h3 class="font-heading font-bold text-[#81B752] text-xs tracking-widest uppercase mb-3">Services</h3>
+          <ul class="space-y-1.5">
+            <li><a href="drain-cleaning.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Drain Cleaning</a></li>
+            <li><a href="hydro-jetting.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Hydro Jetting</a></li>
+            <li><a href="trenchless.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Trenchless Repair</a></li>
+            <li><a href="camera-inspections.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Camera Inspections</a></li>
+            <li><a href="sewer-robotics.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Sewer Robotics</a></li>
+            <li><a href="drain-installation.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Drain Installation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-[#81B752] text-xs tracking-widest uppercase mb-3">Service Areas</h3>
+          <ul class="space-y-1">
+            <li><a href="la-habra.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">La Habra</a></li>
+            <li><a href="fullerton.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Fullerton</a></li>
+            <li><a href="brea.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Brea</a></li>
+            <li><a href="anaheim.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Anaheim</a></li>
+            <li><a href="placentia.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Placentia</a></li>
+            <li><a href="buena-park.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">Buena Park</a></li>
+            <li><a href="service-areas.html" class="font-body text-[#EFF0F1]/45 text-xs hover:text-[#53A6DC] transition-colors">All LA &amp; OC</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="lg:hidden text-center mb-5">
+        <p class="font-body text-xs"><span class="font-heading font-bold text-[#81B752] tracking-widest uppercase">Hours</span> <span class="text-[#EFF0F1]/55">&middot; Mon&ndash;Fri 8am&ndash;10pm &middot; Sat&ndash;Sun 8am&ndash;5pm</span></p>
+      </div>
+
+      <!-- Desktop footer — original 4-column layout -->
+      <div class="hidden lg:grid md:grid-cols-4 gap-10 mb-12">
+        <div>
+          <img src="brand_assets/MainLogo.png" alt="Rooter Champion" class="h-16 w-auto mb-4">
+          <p class="font-body text-[#EFF0F1]/45 text-sm mb-4" style="line-height:1.7">Los Angeles &amp; Orange County's trusted sewer &amp; drain experts. Local, family-owned, and dedicated to quality.</p>
+          <a href="https://maps.google.com/?q=1401+S+Beach+Blvd+La+Habra+CA+90631" target="_blank" rel="noopener" class="block font-body text-[#EFF0F1]/55 text-sm mb-4 hover:text-[#53A6DC] transition-colors" style="line-height:1.6">1401 S Beach Blvd<br>La Habra, CA 90631</a>
+          <a href="tel:7143059263" class="font-heading font-bold text-[#53A6DC] text-lg tracking-wide hover:text-[#B2D1E6] transition-colors duration-200">714-305-9263</a>
+          <p class="rc-areas font-body text-[#EFF0F1]/45 text-sm mt-4"><a href="financing.html">Big job? We offer financing &rarr;</a></p>
+          <div class="flex items-center gap-3 mt-5">
+            <a href="https://www.yelp.com/biz/rooter-champion-drain-cleaning-and-hydro-jetting-la-habra-5" aria-label="Yelp" target="_blank" rel="noopener" class="w-9 h-9 inline-flex items-center justify-center rounded-full opacity-60 hover:opacity-100 hover:bg-white/5 transition-opacity" style="border:1px solid rgba(239,240,241,0.15)">
+              <img src="https://cdn.simpleicons.org/yelp/FF1A1A" alt="Yelp" class="w-4 h-4">
+            </a>
+            <a href="https://www.instagram.com/rooterchampion/" aria-label="Instagram" target="_blank" rel="noopener" class="w-9 h-9 inline-flex items-center justify-center rounded-full opacity-60 hover:opacity-100 hover:bg-white/5 transition-opacity" style="border:1px solid rgba(239,240,241,0.15)">
+              <img src="https://cdn.simpleicons.org/instagram/E1306C" alt="Instagram" class="w-4 h-4">
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-[#81B752] text-base tracking-widest uppercase mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="drain-cleaning.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Drain Cleaning</a></li>
+            <li><a href="hydro-jetting.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Hydro Jetting</a></li>
+            <li><a href="trenchless.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Trenchless Repair</a></li>
+            <li><a href="camera-inspections.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Camera Inspections</a></li>
+            <li><a href="sewer-robotics.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Sewer Robotics</a></li>
+            <li><a href="drain-installation.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Drain Installation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-[#81B752] text-base tracking-widest uppercase mb-4">Service Areas</h3>
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-2">
+            <li><a href="la-habra.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">La Habra</a></li>
+            <li><a href="fullerton.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Fullerton</a></li>
+            <li><a href="brea.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Brea</a></li>
+            <li><a href="anaheim.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Anaheim</a></li>
+            <li><a href="placentia.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Placentia</a></li>
+            <li><a href="buena-park.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Buena Park</a></li>
+            <li><a href="santa-fe-springs.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Santa Fe Springs</a></li>
+            <li><a href="hacienda-heights.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Hacienda Heights</a></li>
+            <li><a href="norwalk.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Norwalk</a></li>
+            <li><a href="rowland-heights.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Rowland Heights</a></li>
+            <li><a href="downey.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Downey</a></li>
+            <li><a href="la-mirada.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">La Mirada</a></li>
+            <li><a href="whittier.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">Whittier</a></li>
+            <li><a href="service-areas.html" class="font-body text-[#EFF0F1]/45 text-sm hover:text-[#53A6DC] transition-colors duration-200">All LA &amp; OC</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-[#81B752] text-base tracking-widest uppercase mb-4">Hours</h3>
+          <div class="space-y-2">
+            <div class="flex justify-between"><span class="font-body text-[#EFF0F1]/45 text-sm">Mon &ndash; Fri</span><span class="font-body text-[#EFF0F1]/65 text-sm">8am – 10pm</span></div>
+            <div class="flex justify-between"><span class="font-body text-[#EFF0F1]/45 text-sm">Sat &ndash; Sun</span><span class="font-body text-[#EFF0F1]/65 text-sm">8am – 5pm</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social icons (mobile only) -->
+      <div class="lg:hidden flex justify-center items-center gap-4 pb-5">
+        <a href="https://www.yelp.com/biz/rooter-champion-drain-cleaning-and-hydro-jetting-la-habra-5" aria-label="Yelp" target="_blank" rel="noopener" class="w-10 h-10 inline-flex items-center justify-center rounded-full opacity-60 hover:opacity-100 hover:bg-white/5 transition-opacity" style="border:1px solid rgba(239,240,241,0.15)">
+          <img src="https://cdn.simpleicons.org/yelp/FF1A1A" alt="Yelp" class="w-4 h-4">
+        </a>
+        <a href="https://www.instagram.com/rooterchampion/" aria-label="Instagram" target="_blank" rel="noopener" class="w-10 h-10 inline-flex items-center justify-center rounded-full opacity-60 hover:opacity-100 hover:bg-white/5 transition-opacity" style="border:1px solid rgba(239,240,241,0.15)">
+          <img src="https://cdn.simpleicons.org/instagram/E1306C" alt="Instagram" class="w-4 h-4">
+        </a>
+      </div>
+
+      <div class="pt-6 lg:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 lg:gap-4" style="border-top:1px solid rgba(39,74,106,0.3)">
+        <p class="font-body text-[#EFF0F1]/25 text-[10px] lg:text-xs">© 2026 Rooter Champion. All rights reserved. | Licensed &amp; Insured | CA Lic. #1063585</p>
+        <div class="flex gap-4 lg:gap-6">
+          <a href="privacy.html" class="font-body text-[#EFF0F1]/25 text-[10px] lg:text-xs hover:text-[#EFF0F1]/55 transition-colors duration-200">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div><!-- END MAIN CONTENT CONTAINER -->
+
+  <script src="scripts.js?v=4"></script>
+
+  <!-- Drain help + Book Online widget (/app/) -->
+  <script src="/app/rc-widget.js?v=3" async></script>
+</body>
+</html>
